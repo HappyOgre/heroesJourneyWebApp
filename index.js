@@ -12,7 +12,7 @@ let db = new sqlite3.Database("dsa.db", sqlite3.OPEN_READWRITE, (err) => {
 
 
 db.serialize(() => {
-    db.run(sql, (err) => {
+    db.all(sql, (err) => {
         if (err) {
             console.log(err.message);
         }

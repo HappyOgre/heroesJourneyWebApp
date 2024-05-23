@@ -10,13 +10,13 @@ let db = new sqlite3.Database(dbName, sqlite3.OPEN_READONLY, (err) => {
     }
 })
 
-let sql = `SELECT name FROM movesets`;
-
-db.all(sql, [], (err, rows) => {
-    if (err) {
-        console.log(err.message);
-    }
-    rows.forEach((row) => {
-        console.log(row.name);
-    });
-});
+let sql = `select field3 from movesets`;
+db.serialize(() =>{
+    db.all(sql, [], (err, row) => {
+        if (err) {
+            console.log(err.message);
+        }
+        row.forEach((row) => {
+            console.log(row.name);
+        });
+    })});
