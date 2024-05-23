@@ -1,5 +1,5 @@
 import sqlite3 from 'sqlite3';
-let sql = `SELECT AT_Name FROM movesets`;
+let sql = `SELECT AT_Name FROM movesets WHERE AT_Name is NOT NULL `;
 const rowName = [];
 
 //connect to DB
