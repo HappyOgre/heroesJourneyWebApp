@@ -1,5 +1,6 @@
 import sqlite3 from 'sqlite3';
-let sql = `SELECT name FROM movesets`;
+let sql = `SELECT AT_Name FROM movesets`;
+const rowName = [];
 
 //connect to DB
 let db = new sqlite3.Database("dsa.db", sqlite3.OPEN_READWRITE, (err) => {
@@ -12,11 +13,15 @@ let db = new sqlite3.Database("dsa.db", sqlite3.OPEN_READWRITE, (err) => {
 
 
 db.serialize(() => {
-    db.all(sql, (err) => {
+    db.all(sql, [], (err, rows) => {
         if (err) {
             console.log(err.message);
-        }
-        
+        } else {
+            rows.forEach((row) => {
+                return rowName.push(row);
+            });
+        };
+        console.log(rowName);
     })
 });
 /*
