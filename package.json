@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node -r esm logic.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "nodejs": "^0.0.0",
+    "sqlite3": "^5.1.7"
+  }
+}

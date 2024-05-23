@@ -1,0 +1,71 @@
+1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22
+Spieler;Fähigkeit 1;Fähigkeit 2;Fähigkeit 3;Fähigkeit 4;Fähigkeit 5;Fähigkeit 6;Fähigkeit 7;Fähigkeit 8;Fähigkeit 9;Fähigkeit 10;Fähigkeit 11;Fähigkeit 12;Fähigkeit 13;Fähigkeit 14;Fähigkeit 15;Fähigkeit 16;Fähigkeit 17;Fähigkeit 18;Fähigkeit 19;Fähigkeit 20;Spieler
+1;Dominant: Phönix;Storm-Eater;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1
+2;Dominant: Shiva;Augmentation: Velkoz;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;2
+3;Beschwörung: Blue Eyes;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;3
+4;Beschwörung: Kalagdroog;Digimon Tamer: Veemon;Teufesfrucht: Ryu Ryu no mi - Pterodon;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;4
+5;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;5
+6;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;6
+7;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;7
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+1;2;3;4;5;;;;;;;;;;;;;;;;;
+Fähigkeiten Name:;Beschreibung;Bonus 1;Bonus 2;Bonus 3;;;;;Triforce der Kraft;Triforce der Weisheit;;;;;;;;;;;
+-;-;-;-;-;;;;;;;;;;;;;;;;;
+Ahnenstein;Ist im Besitz eines Ahnensteins;MA+10;CH+10;-;;;;Triforce der Kraft;Triforce der Weisheit;;;;;;;;;;;;
+Augmenation: Khazix;Eure Essenz ist durch Khazix augmentiert;BW+1;SCL +2 macht euch Unsichtbar;Erlaubt euch ein Ziel zu fixieren. Das Aufspüren und attackieren ist um 2 erl;;;;;;;;;;;;;;;;;
+Augmentation: Absol;Eure Essenz ist durch das Pokemon Absol gestärkt;GI+1;IT+1;WHN Würfe sind um 2 erl;;;;;;;;;;;;;;;;;
+Augmentation: Arceus;Die Essenz von wurde Arceus augmentiert;GI +2;WI +2;-;;;;;;;;;;;;;;;;;
+Augmentation: Groudon;Die Essenz von Groudon wurde augmentiert;AUD +1;ST +1;-;;;;;;;;;;;;;;;;;
+Augmentation: Guilmon;Eure Essenz wurde mit einem Guilmon augmentiert;AUD +1;GI +1;Gefahrenspüren [MNK +3];;;;;;;;;;;;;;;;;
+Augmentation: Hinami;Die Essenz von Hinami wurde augmentiert;GI +1;IT+1 ;Chakrazauber sind um 1 erl.;;;;;;;;;;;;;;;;;
+Augmentation: Hochvisierin der Klingen;Die Essenz wurde durch das Experiment von Allagern augmentiert || Lässt Euch Zerg Larven legen, sowie sie entwickeln und steuern;IT +2;AUD +1;-;;;;;;;;;;;;;;;;;
+Augmentation: König der Klingen;Die Essenz wurde durch das Experiment von Allagern augmentiert || Lässt Euch Zerg formen und entwickeln, sowie neue Zerg erschaffen und kontrollieren;IT +2;AUD +1;-;;;;;;;;;;;;;;;;;
+Augmentation: Kurama;Die Essenz wurde durch das Bijuu Kurama augmentiert.;ST +2;IT+2;Intentionen spüren [MNK +3];;;;;;;;;;;;;;;;;
+Augmentation: Lucario;Eure Essenz ist mit einem Lucario augmentiert;BW+1;ST +1;Aura Analysieren [MNK +3];;;;;;;;;;;;;;;;;
+Augmentation: Mewtu;Eure Essenz wurde mit Mewtu Augmentiert;GI +1;WI +1;Telekinese [EM +3];;;;;;;Beschwörungen Leben [3]:;;55;;;;;;;;
+Augmentation: Quajutsu;Ihr seid durch ein Quajutsu augmentiert;BW+1;SCL ist um 2 erleichtert;"Erlaubt es Euch einmal pro Spieltag Schaden über ""Delegator"" zu entgehen";;;;;;;Beschwörungen Leben [4]:;;60;;;;;;;;
+Augmentation: Rayeh;Eure Essenz wurde durch den Gott Rayeh Augmentiert;GI+2;BW+1;-;;;;;;;;;;;;;;;;;
+Augmentation: Rek'sai;Eure Essenz ist durch Rek'sai augmentiert;AUD +2;WHN +2 lassen euch schwingungen erspüren und lokalisieren (Boden);;;;;;;;;;;;;;;;;;
+Augmentation: Renamon;Eure Essenz ist durch Renamon augmentiert;BW +1;IT +1;Versiegelung [EM +3];;;;;;;;;;;;;;;;;
+Augmentation: Rengar;Eure Essenz ist durch eine Mischung aus euren Fuegro und einer Wildkatze Augmentiert;BW+1;AUD+1;-;;;;;;;;;;;;;;;;;
+Augmentation: Succubus;Eure Essenz wurde mit einer Succubus Augmentiert;GI+2;BW+2;Ihr könnt mit Peitschen umgehen;;;;;;;;;;;;;;;;;
+Augmentation: Tarecgosa;Die Essenz wurde durch Tarecgosa augmentiert;IT +2;WE +1;-;;;;;;;;;;;;;;;;;
+Augmentation: Twili;Eure Essenz wurde mit eine Twiligestalt Augmentiert;IT+1;Ihr könnt  mit ZAU+2 Twilimagie wirken;EM + 2 lässt euch Dinge versiegeln;;;;;;;;;;;;;;;;;
+Augmentation: Velkoz;Ihr seid durch Velkoz Augmentiert;WI+2;Erlaubt Euch Essenztransformation durchzuführen;GW erl um 3;;;;;;;;;;;;;;;;;
+Augmentation: Vulnona;Ihr seid durch ein Vulnona augmentiert;GI+2;-;-;;;;;;;;;;;;;;;;;
+Augmentation: Worg;Die Essenz des Elune gesegneten Worgs wurde augmentiert;ST +2;BW +2;-;;;;;;;;;;;;;;;;;
+Augmentation: Worg;Eure Essenz is mit einem Worg Augmentiert;ST+1;AUD+1;;;;;;;;;;;;;;;;;;
+Augmentation: Zoroark;Eure Essenz ist mit einem Zoroark augmentiert;IT+1;BW+1;Meisterhafte Illusionen [EM +3];;;;;;;;;;;;;;;;;
+Augmentierung: Odin;Ihr wurdet durch den Primae Odin augmentiert, erlaubt Euch sein Schwert jederzeit zu beschwören;-;-;-;;;;;;;;;;;;;;;;;
+Beschwörung: Blue Eyes;Ihr habt einen Pakt mit einem antiken Drachengeist. | Verwendet Licht, verursacht euren halbierten Lichtschaden als Schaden | Kritische treffer Blenden das Ziel für 2 Aktionen;Verwendet: BS;Attackiert nach Euch;LE:55;;;;;;;;;;;;;;;;;
+Beschwörung: Kalagdroog;Ihr habt einen Pakt mit einem antiken Dämonen. | Verwendet Feuermagie, verursacht euren Manawert als Schaden | Kritische treffer reduzieren die Feueresistenz um eine Stufe (max 2 Stufen);Verwendet: AT;Attackiert nach Euch;LE:60;;;;;;;;;;;;;;;;;
+Blauer Drachenaspekt;Ihr seid Aspekt des Blauen Drachenschwarms. Ihr wacht über die Magie der Welt;IT+1;WE+1;Ihr könnt Leylinien manipulieren [EM +3];;;;;;;;;;;;;;;;;
+Blazing-Ice;Ihr seid die Inkarnation des Frostfeuerelements;IT+1;BW+1;Ihr könnt Eis und Feuer manipulieren [EM+3];;;;;;;;;;;;;;;;;
+Bronzener Drachenaspekt;Ihr seid Aspekt des Bronzenen Drachenschwarms. Ihr wacht über die einzig wahre Zeitlinie;IT+1;GI+1;Erlaubt es Euch in andere Zeitlinien zu blicken [EM+3];;;;;;;;;;;;;;;;;
+Deoxys DNA;Erlaubt es Euch euren Körper zu verändern. | Defensivhaltung: DEF +2 | Angriffshaltung: KRIT +2 | Geschwindigkeitshaltung: +3 H;Körperänderung (GW-2);AUD+2;-;;;;;;;;;;;;;;;;;
+Digimon Tamer: Guilmon;Ihr habt einen Digimonpartner der mit Euch kämpft und Euch unterstützt.  Erleichtert eure Rettungswürfe generell um 2, Gegner kann keine kritische Erfolge bei manipulationswürfe von Euch haben. Erlaubt es Euch euren Partner, in einem Radius von 2 Feldern in euch zu versiegeln || Digitieren Eures Digimons ist eine Bonusaktion;GI +2;-;-;;;;;;;;;;;;;;;;;
+Digimon Tamer: Veemon;Ihr habt einen Pakt mit einem Digimon namens Veemon. ;Verwendet AT;Attackiert nach Euch;LE:70;;;;;;;;;;;;;;;;;
+Dominant: Garuda;Ihr seid der Dominant von Garuda und Verkörpert sie;BW+1;IT+1;Erlaubt es Euch Winde zu kontrollieren [EM+2];;;;;;;;;;;;;;;;;
+Dominant: Ifrit;Ihr seid der Dominant von Ifrit und verkörpert ihn;ST +2;GI+2;-;;;;;;;;;;;;;;;;;
+Dominant: Odin;Ihr seid der Dominant von Odin und verkörpert ihn;Erlaubt es Euch jederzeit Odins schwert zu beschwören;;;;;;;;;;;;;;;;;;;
+Dominant: Phönix;Ihr seid der Dominant des Phönix und verkörpert diesen;GI +1;WE +1;-;;;;;;;;;;;;;;;;;
+Dominant: Shiva;Ihr seid der Dominant von Shiva und verkörpert sie;IT+1;BW+1;Erlaubt es Euch Eis zu kontrollieren [EM +2];;;;;;;;;;;;;;;;;
+Etherdrachenbindung;Ihr habt eine Etherdrachen Bindung;GI +2;-;-;;;;;;;;;;;;;;;;;
+Feuerlord;Ihr verkörpert das Element des Feuers, Ihr seid der Herrscher über die Feuerlande.;Feuerschaden ist permanent um 5 erhöht;-;-;;;;;;;;;;;;;;;;;
+Goldrinns Erbe;Durch Elunes Segen und den Einfluss von Goldrinn werdet Ihr verstärkt;Astralschaden erhöht um 5;AUD+2;GI+2;;;;;;;;;;;;;;;;;
+Grüner Drachenaspekt;Ihr seid Aspekt des Grünen Drachenschwarms. Ihr wacht über den Smaragdgrünen Traum;WE+1;GI+1;Erlaubt es Euch in den Smaragdgrünen Traum zu gehen [EM +3];;;;;;;;;;;;;;;;;
+Hexeraugmentation: Troll;Durch DNA-Manipulation wurde die Regenerationsfähigkeit eines Trolls übernommen: Regeneriert jede Runde 3 LE;AUD +1;-;-;;;;;;;;;;;;;;;;;
+Kalagdroog;Ihr besitzt den den Dämonen Kalagdroog;GI+2;-;-;;;;;;;;;;;;;;;;;
+Roter Drachenaspekt;Ihr seid Aspekt des Roten Drachenschwarms. Ihr wacht über das Leben der Welt;AUD+1;IT+1;Eure Flammen können Reinigen [EM +3];;;;;;;;;;;;;;;;;
+Schwarzer Drachenaspekt;Ihr seid Aspekt des Schwarzen Drachenschwarms. Die Erde und tiefen Orte der Welt sind eure Heimat;AUD+1;ST +1;Ihr könnt Erde kontrollieren [AT+3];;;;;;;;;;;;;;;;;
+Storm-Eater;Ihr seid die Inkarnation des Wind und Blitzelements;IT+1;AUD+1;Ihr könnt Sturmwolken erschaffen [EM+3];;;;;;;;;;;;;;;;;
+Teufesfrucht: Ryu Ryu no mi - Pterodon;Erlaubt es euch zu einem Pterodon zu werden, allerdings könnt ihr nicht mehr schwimmen;Wurf auf Fliegen entfällt;BW+1;AUD+2;;;;;;;;;;;;;;;;;
+Triforce der Kraft;Erlaubt es Euch Angriffe um 4 zu erschweren um sie 15 Schaden mehr verursachen zu lassen, und sie Treffen kritisch. [5R CD];-;-;;;;;;;;;;;;;;;;;;
+Triforce der Weisheit;Erlaubt es Euch Eure gemeisterten Formen als Avatare um Euch zu beschwören, um so auf ihre Fähigkeiten zuzugreifen. Immer nur eine extraform kann aktiv sein. [15R CD];-;-;;;;;;;;;;;;;;;;;;
+Ultima Kollektiv;Erlaubt es Euch bis zu 5 Formen, Personen oder Gegenstände zu wählen und diese in ein Kollektiv zu geben. Ihr könnt auf Fähigkeiten der Leute zugreifen außerdem steigt pro wohlgesonnene Person im Kollektiv Euer GI-Rettungswert um 2 [Arthania um 4];KE +15;IT +2;-;;;;;;;;;;;;;;;;;

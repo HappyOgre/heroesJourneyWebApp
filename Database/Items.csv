@@ -1,0 +1,81 @@
+Kopf;;;;;;;;;;;;Waffe;;;;;;;;;;
+Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+1;-;;;;;;;;-;;;1;Federn der Kurutai;4;FK;2;;1;R;3;"Erlaubt es Euch ""Loderfeuer"" als Halbaktion zählen zu lassen";
+2;-;;;;;;;;-;;;2;Aluneth - Stab der Großmagierin;4;EM;2;2;;KE;3;Erlaubt es Euch Eure Verstärkungen zu verbessern, sodass sie um 3 verbessert sind [20R CD];
+3;-;;;;;;;;-;;;3;Stab der Beschwörungen;4;BS;2;1;;KE;3;Falls eine Eurer Beschwörungen kampfunfähig wird, so könnt ihr sie spontan erneut Beschwören (1 mal pro Kampf);
+4;-;;;;;;;;-;;;4;Beschädigtes Felomelorn;2;AT;2;;1;WK;3;-;
+5;-;;;;;;;;-;;;5;-;;;;;;;;-;
+6;-;;;;;;;;-;;;6;-;;;;;;;;-;
+7;-;;;;;;;;-;;;7;-;;;;;;;;-;
+1;2;3;4;5;6;7;8;9;10;11;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+Schultern;;;;;;;;;;;;Offhand;;;;;;;;;;
+Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+1;Schultern der Scharfschützin;3;BW;2;1;0;0;;-;;;1;-;;;;;;;;-;
+2;-;;;;;;;;-;;;2;-;;;;;;;;-;
+3;-;;;;;;;;-;;;3;Enma;4;AUD;2;2;1;AT;1;???;
+4;-;;;;;;;;-;;;4;-;;;;;;;;-;
+5;-;;;;;;;;-;;;5;-;;;;;;;;-;
+6;-;;;;;;;;-;;;6;-;;;;;;;;-;
+7;-;;;;;;;;-;;;7;-;;;;;;;;-;
+1;2;3;4;5;6;7;8;9;10;11;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+Brust;;;;;;;;;;;;Trinket 1;;;;;;;;;;
+Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+1;Mantel der Kurutai;2;LE;20;;;;;-;;;1;Zonai Secret Stone;4;GW;3;;2;FK;2;Erlaubt es euch eine Form sofort zu meistern: Raszageth;
+2;Gelehrtenroben;2;AK;3;;;;;-;;;2;Zonai Secret Stone;4;EM;3;2;;GW;2;Erlaubt es euch eine Form sofort zu meistern: Shiva;
+3;Beschwörer Jacke;2;LE;20;;;;;-;;;3;Zonai Secret Stone;4;BS;3;;2;ZA;2;Jeder Eurer Dolche zählt als 2 Anwendungen, jeder eurer Schwerter zählt als 2 Anwendungen. ;
+4;Drakonischer Panzer;2;LE;20;;;;;-;;;4;-;;;;;;;;-;
+5;-;;;;;;;;-;;;5;-;;;;;;;;-;
+6;-;;;;;;;;-;;;6;-;;;;;;;;-;
+7;-;;;;;;;;-;;;7;-;;;;;;;;-;
+1;2;3;4;5;6;7;8;9;10;11;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+Hände;;;;;;;;;;;;Trinket 2;;;;;;;;;;
+Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+1;-;;;;;;;;-;;;1;-;;;;;;;;-;
+2;Eisschlag - Armreif von Shiva;4;IT;2;2;1;LE;10;"Immer wenn 3 Eurer Eisangriffe kritisch treffen erlaubt es euch die Abklingzeit von ""Umkehr"" zu halbieren";;;2;-;;;;;;;;-;
+3;-;;;;;;;;-;;;3;-;;;;;;;;-;
+4;-;;;;;;;;-;;;4;-;;;;;;;;-;
+5;-;;;;;;;;-;;;5;-;;;;;;;;-;
+6;-;;;;;;;;-;;;6;-;;;;;;;;-;
+7;-;;;;;;;;-;;;7;-;-;-;-;;;;;-;
+1;2;3;4;5;6;7;8;9;10;11;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+Hose;;;;;;;;;;;;Ring 1;;;;;;;;;;
+Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+1;-;;;;;;;;-;;;1;Ring der Hinterhältigkeit;2;SCL;2;;;;;-;
+2;-;;;;;;;;-;;;2;-;;;;;;;;-;
+3;-;;;;;;;;-;;;3;-;;;;;;;;-;
+4;-;;;;;;;;-;;;4;Ring der Schattenlande;2;ESC;2;;;;;-;
+5;-;;;;;;;;-;;;5;-;;;;;;;;-;
+6;-;;;;;;;;-;;;6;-;;;;;;;;-;
+7;-;;;;;;;;-;;;7;-;;;;;;;;-;
+1;2;3;4;5;6;7;8;9;10;11;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;Ring 2;;;;;;;;;;
+;;;;;;;;;;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+Level;;;Tier;;;;;;;;;1;-;;;;;;;;-;
+1;4;;1;10;;;;;;;;2;-;;;;;;;;-;
+2;4;;2;10;;;;;;;;3;-;;;;;;;;-;
+3;4;;3;10;;;;;;;;4;-;;;;;;;;-;
+4;4;;4;10;;;;;;;;5;-;;;;;;;;-;
+5;1;;5;10;;;;;;;;6;-;;;;;;;;-;
+6;1;;;;;;;;;;;7;-;;;;;;;;-;
+7;1;;;;;;;;;;;1;2;3;4;5;6;7;8;9;10;11
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;Hals;;;;;;;;;;
+;;;;;;;;;;;;Name;Itemname;Itemgüte;Wert;Bonus;H;KRIT;Wert 2;Bonus 2;Effekt;
+;;;;;;;;;;;;1;-;;;;;;;;-;
+;;;;;;;;;;;;2;-;;;;;;;;-;
+;;;;;;;;;;;;3;-;;;;;;;;-;
+;;;;Balancing;;;;;;;;4;-;;;;;;;;-;
+;;;;;;;;;;;;5;-;;;;;;;;-;
+;;;;;;;;;;;;6;-;;;;;;;;-;
+;;;Güte;Wert1;Wert2;KRIT;H;;;;;7;-;;;;;;;;-;
+;;;1;1;1;0-1;0-2;;;;;1;2;3;4;5;6;7;8;9;10;11
+;;;2;1;1;1;0-3;;;;;;;;;;;;;;;
+;;;3;2;2;0-2;0-3;;;;;;;;;;;;;;;
+;;;4;2;2;2;`2-4;;;;;;;;;;;;;;;
+;;;5;3;3;`2-3;`3-5;;;;;;;;;;;;;;;
