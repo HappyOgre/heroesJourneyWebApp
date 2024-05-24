@@ -1,6 +1,8 @@
 import sqlite3 from 'sqlite3';
-let sql = `SELECT AT_Name FROM movesets WHERE AT_Name is NOT NULL `;
+//let sql = `SELECT AT_Name, field3, AT_Art, AT_Beschreibung, Damage FROM movesets WHERE AT_Name is NOT NULL AND Damage != '0,00'`;
+let sql = `SELECT * FROM Beschwoerungen`
 const rowName = [];
+let attacksList = [];
 
 //connect to DB
 let db = new sqlite3.Database("dsa.db", sqlite3.OPEN_READWRITE, (err) => {
@@ -18,21 +20,9 @@ db.serialize(() => {
             console.log(err.message);
         } else {
             rows.forEach((row) => {
-                return rowName.push(row);
+                rowName.push(row);
             });
-        };
-        console.log(rowName);
-    })
-});
-/*
-db.all(sql, [], (err, rows) => {
-    if (err) {
-        console.log(err.message);
-    }
-    rows.forEach((row) => {
-        if (err) {
-            console.log(err.message);
-        };
+        console.log(rowName)
+        }
     });
 });
-*/
