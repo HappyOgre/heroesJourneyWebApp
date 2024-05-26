@@ -6,6 +6,7 @@
       expand-on-hover
       rail
       width="200"
+      class="d-flex flex-column justify-center align-center"
     >
       <div class="sidebar-content">
         <v-list-item class="no-ellipsis">
@@ -95,7 +96,7 @@
     <v-app-bar app>
       <v-row class="justify-center">
         <v-col class="btnCol">
-            <v-btn variant="tonal" class="mx-1">Stats</v-btn>
+            <RouterLink to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Rüstung</v-btn>
@@ -120,7 +121,9 @@
         </v-col>  
       </v-row>
       <v-spacer></v-spacer>
+      <RouterLink to="/">
         <v-img src="../assets/Hejo_logo.png"></v-img>
+      </RouterLink>
     </v-app-bar>
 
 
@@ -132,7 +135,7 @@
 
 <script>
 export default {
-  name: 'index',
+  name: 'Index',
 }
 </script>
 
@@ -153,4 +156,7 @@ export default {
   width: 100%; /* Nimmt die volle Breite des übergeordneten Containers ein */
   box-sizing: border-box; /* Padding und Border in die Breite einbeziehen */
 }
+
+
+
 </style>

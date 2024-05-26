@@ -6,19 +6,29 @@
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHistory } from 'vue-router'
 
-import index from '../components/index.vue'
-import stats from '../components/stats.vue'
+import Index from '../components/index.vue'
+import Stats from '../components/stats.vue'
 
 const routes = [
-  {path: '/', component: index},
-  {path: '/stats', component: stats}
+  {path: "/", 
+  component: Index,
+  children: [
+    {
+      path: 'stats',
+      component: Stats
+    }
+  ]
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes,
 })
 
 export default router
+
+
+
