@@ -10,6 +10,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Index from '../components/index.vue'
 import Stats from '../components/stats.vue'
+import Ruestung from '../components/ruestung.vue'
+import Formen from '../components/formen.vue'
 
 const routes = [
   {path: "/", 
@@ -18,6 +20,14 @@ const routes = [
     {
       path: 'stats',
       component: Stats
+    },
+    {
+      path: 'ruestung',
+      component: Ruestung
+    },
+    {
+      path: 'formen',
+      component: Formen
     }
   ]
   }

@@ -99,10 +99,10 @@
             <RouterLink to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <v-btn variant="tonal" class="mx-1">Rüstung</v-btn>
+          <RouterLink to="/ruestung"><v-btn variant="tonal" class="mx-1">Rüstung</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <v-btn variant="tonal" class="mx-1">Formen</v-btn>
+          <RouterLink to="/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Beschwörungen</v-btn>

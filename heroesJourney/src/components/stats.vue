@@ -499,7 +499,7 @@
     }
 </script>
 
-<style>
+<style >
 
 :root {
     --orangeTile: #914420;
@@ -523,10 +523,6 @@
     max-width: 280px;
     margin-right: 0px;
     margin-left: 0px;
-}
-
-.blaues-tile {
-    color: #0c4278;
 }
 
 #faehigkeits-kampfwerte-container, #kampfwerte-container, #grundstatistik-container {
