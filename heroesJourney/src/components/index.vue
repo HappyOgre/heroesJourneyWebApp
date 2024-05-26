@@ -121,9 +121,7 @@
         </v-col>  
       </v-row>
       <v-spacer></v-spacer>
-      <RouterLink to="/">
         <v-img src="../assets/Hejo_logo.png"></v-img>
-      </RouterLink>
     </v-app-bar>
 
 
