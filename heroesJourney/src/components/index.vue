@@ -2,91 +2,105 @@
   <vApp>
     <!-- Navigation Drawer -->
     <v-navigation-drawer
-      absolute
       expand-on-hover
       rail
-      width="200"
-      class="d-flex flex-column justify-center align-center"
+      class="fixed"
     >
-      <div class="sidebar-content">
+      <div class="sidebar-content fixed">
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Level</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis" >
           <v-list-item-content>
             <v-list-item-title>LE</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>DEF</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Können</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>AT</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>FK</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>ZA</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>GW</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>EM</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>BS</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Krit</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>H</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Aktionen</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Buffs</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Bonusakt</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
         <v-list-item class="no-ellipsis">
           <v-list-item-content>
             <v-list-item-title>Reichweide</v-list-item-title>
+            <v-list-item-text>1</v-list-item-text>
           </v-list-item-content>
         </v-list-item>
       </div>
@@ -96,20 +110,23 @@
     <v-app-bar app>
       <v-row class="justify-center">
         <v-col class="btnCol">
-            <RouterLink to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
+            <RouterLink class="unlink" to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <RouterLink to="/ruestung"><v-btn variant="tonal" class="mx-1">Rüstung</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/ruestung"><v-btn variant="tonal" class="mx-1">Rüstung</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <RouterLink to="/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>
         </v-col>  
+<!-- TODO - Seite bauen
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Beschwörungen</v-btn>
         </v-col>  
+-->
         <v-col class="btnCol">
-          <v-btn variant="tonal" class="mx-1">Moveset</v-btn>
+          <RouterLink class="unlink" to="/moveset"><v-btn variant="tonal" class="mx-1">Moveset</v-btn></RouterLink>
         </v-col>  
+<!-- TODO - Seiten bauen
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Quests</v-btn>
         </v-col>  
@@ -118,7 +135,11 @@
         </v-col>  
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Items</v-btn>
-        </v-col>  
+        </v-col>
+-->
+        <v-col class="btnCol">
+          <RouterLink class="unlink" to="/klasse"><v-btn variant="tonal" class="mx-1">Klasse</v-btn></RouterLink>
+        </v-col> 
       </v-row>
       <v-spacer></v-spacer>
         <v-img src="../assets/Hejo_logo.png"></v-img>
@@ -140,11 +161,15 @@ export default {
 
 <style scoped>
 .sidebar-content {
-  height: 100%;
+  position: fixed;  
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertikal zentriert */
   width: 100%; /* Stellt sicher, dass der Container die volle Breite der Sidebar einnimmt */
+}
+
+.fixed {
+  position: fixed;
 }
 
 .no-ellipsis .v-list-item-title {
@@ -155,6 +180,9 @@ export default {
   box-sizing: border-box; /* Padding und Border in die Breite einbeziehen */
 }
 
-
+.unlink {
+  text-decoration: none;
+  color: inherit;
+}
 
 </style>

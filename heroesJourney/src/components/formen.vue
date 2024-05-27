@@ -1,9 +1,31 @@
 <template>
     <v-container fluid>
-        <v-data-table 
-            :items="formen"
-        >
-    </v-data-table>
+        <v-expansion-panels multiple>
+            <v-expansion-panel>
+                <v-expansion-panel-title>
+                    Formen
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                    <v-data-table 
+                        :items="formen"
+                    >
+                    </v-data-table>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+            <v-divider class="border-opacity-0" :thickness="10">
+            </v-divider>
+            <v-expansion-panel>
+                <v-expansion-panel-title>
+                    Speziellen Fähigkeiten
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                    <v-data-table 
+                        :items="spezi"
+                    >
+                    </v-data-table>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+        </v-expansion-panels>
     </v-container>
 </template>
 
@@ -13,6 +35,20 @@ export default {
     data() {
         return {
             formen: [
+                /* blanko-form
+                    {
+                    symbol: "",
+                    form: "",
+                    rang: "",
+                    "Bonus bei Meisterung": "",
+                    "Boni 1": "",
+                    "Boni 2": "",
+                    "Boni 3": "",
+                    "Informationen und Instinkte/Besonderheiten": "",
+                    "Fortschritt": ""
+                    }
+                */
+
                 {
                     symbol: "",
                     form: "Phönix",
@@ -88,6 +124,38 @@ export default {
                     "Boni 3": "",
                     "Informationen und Instinkte/Besonderheiten": "Form eines Leviathankrakens",
                     "Fortschritt": "1%"
+                }
+            ],
+            spezi: [
+                /* blanko-form
+                    {
+                    symbol: "",
+                    form: "",
+                    rang: "",
+                    "Bonus bei Meisterung": "",
+                    "Boni 1": "",
+                    "Boni 2": "",
+                    "Boni 3": "",
+                    "Informationen und Instinkte/Besonderheiten": "",
+                    "Fortschritt": ""
+                    }
+                */
+
+                {
+                    name: "Dominant: Phönix",
+                    beschreibung: "Ihr seid der Dominant des Phönix und verkörpert diesen",
+                    symbol: "",
+                    "Bonus 1": "GI +1",
+                    "Bonus 2": "WE +1",
+                    "Bonus 3": ""
+                },
+                {
+                    name: "Storm-Eater",
+                    beschreibung: "Ihr seid die Inkarnation des Wind und Blitz-Elements",
+                    symbol: "",
+                    "Bonus 1": "IT +1",
+                    "Bonus 2": "AUD +1",
+                    "Bonus 3": "Ihr könnt Sturmwolken erschaffen [EM +3]"
                 }
             ]
         }
