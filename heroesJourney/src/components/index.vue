@@ -4,110 +4,113 @@
     <v-navigation-drawer
       expand-on-hover
       rail
-      class="fixed"
+      app
+      v-model="mainSidebarDrawer"
     >
-      <div class="sidebar-content fixed">
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Level</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis" >
-          <v-list-item-content>
-            <v-list-item-title>LE</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>DEF</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Können</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>AT</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>FK</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>ZA</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>GW</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>EM</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>BS</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Krit</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>H</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Aktionen</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Buffs</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Bonusakt</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item class="no-ellipsis">
-          <v-list-item-content>
-            <v-list-item-title>Reichweide</v-list-item-title>
-            <v-list-item-text>1</v-list-item-text>
-          </v-list-item-content>
-        </v-list-item>
+      <div class="side-bar-content">
+        <v-list>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Level</v-list-item-title>
+              <v-list-item-text>{{ level }}</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis" >
+            <v-list-item-content>
+              <v-list-item-title>LE</v-list-item-title>
+              <v-list-item-text>{{ le }}</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>DEF</v-list-item-title>
+              <v-list-item-text>{{ def }}</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Können</v-list-item-title>
+              <v-list-item-text>1</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>AT</v-list-item-title>
+              <v-list-item-text>6</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>FK</v-list-item-title>
+              <v-list-item-text>16</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>ZA</v-list-item-title>
+              <v-list-item-text>8</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>GW</v-list-item-title>
+              <v-list-item-text>13</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>EM</v-list-item-title>
+              <v-list-item-text>8</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>BS</v-list-item-title>
+              <v-list-item-text>8</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Krit</v-list-item-title>
+              <v-list-item-text>4</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>H</v-list-item-title>
+              <v-list-item-text>15</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Aktionen</v-list-item-title>
+              <v-list-item-text>1</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Buffs</v-list-item-title>
+              <v-list-item-text>1</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Bonusakt</v-list-item-title>
+              <v-list-item-text>1</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="no-ellipsis">
+            <v-list-item-content>
+              <v-list-item-title>Reichweide</v-list-item-title>
+              <v-list-item-text>5</v-list-item-text>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
       </div>
     </v-navigation-drawer>
 
     <!-- Navbar mit Buttons oben fixiert -->
-    <v-app-bar app>
+    <v-app-bar app fixed v-model="topBar">
       <v-row class="justify-center">
         <v-col class="btnCol">
             <RouterLink class="unlink" to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
@@ -153,23 +156,31 @@
 </template>
 
 <script>
+
+ //import db from '../../sqlQuery.js';
+
 export default {
   name: 'Index',
+  data() {
+    return {
+      mainSidebarDrawer: true,
+      level: "4",
+      le: "105",
+      def: "1"
+    }
+  }
 }
 </script>
 
 
 <style scoped>
-.sidebar-content {
-  position: fixed;  
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertikal zentriert */
-  width: 100%; /* Stellt sicher, dass der Container die volle Breite der Sidebar einnimmt */
+
+.side-bar-content {
+  position: fixed;
 }
 
-.fixed {
-  position: fixed;
+.overflow {
+  overflow: hidden;
 }
 
 .no-ellipsis .v-list-item-title {

@@ -1,6 +1,7 @@
 {
   "name": "heroesJourney",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +12,7 @@
     "@mdi/font": "7.0.96",
     "core-js": "^3.34.0",
     "roboto-fontface": "*",
+    "sqlite3": "^5.1.7",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"
   },
