@@ -1,11 +1,13 @@
 <template>
-  <vApp>
+  <vApp id="app-container">
     <!-- Navigation Drawer -->
     <v-navigation-drawer
       expand-on-hover
       rail
       app
       v-model="mainSidebarDrawer"
+      class="nav-drawer"
+      style="height:100vh;"
     >
       <div class="side-bar-content">
         <v-list>
@@ -149,9 +151,9 @@
     </v-app-bar>
 
 
-    <vMain>
+    <div class="content-container">
       <router-view />
-    </vMain>
+    </div>
   </vApp>
 </template>
 
@@ -175,11 +177,36 @@ export default {
 
 <style scoped>
 
+body {
+  overflow: hidden; /* Body-Scrolling deaktivieren */
+  margin: 0;
+}
+
+#app-container {
+  height: 100vh;
+}
+
+.v-application--wrap {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.content-container {
+  overflow-y: auto;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+  margin-left: 40px;
+}
+
 .side-bar-content {
-  position: fixed;
+  position: absolute;
 }
 
 .overflow {
+  overflow: hidden;
+}
+
+.nav-drawer {
   overflow: hidden;
 }
 

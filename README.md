@@ -20,26 +20,25 @@ Alle Werte notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Data
 
 Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
 
-Frontend
+Frontend Design
 
 | Schritt                                                       | Status         |
 |---------------------------------------------------------------|----------------|
-| Umstellung : Übernahme Dynamische Werte                       | WIP            |
 | Erstellung : Klasse                                           | done           |
 | Erstellung : Moveset                                          | done           |
 | Erstellung : Formen                                           | done           |
 | Erstellung : Rüstung                                          | done           |
 | Erstellung : Stat-Übersicht                                   | done           |
 
-Backend
+Frontend Logic
 
 | Schritt                                                       | Status         |
 |---------------------------------------------------------------|----------------|
-| Erstellung: SQL-Querys für Dynamische Werte                   | WIP            |
-| Erstellung: Klasse inSite Logic                               | open           |
-| Erstellung: Moveset inSite Logic                              | open           |
-| Erstellung: Formen inSite Logic                               | open           |
-| Erstellung: Rüstung - inSite Logic (Gegenstände verwenden)    | open           |
+| Erstellung : Klasse                                           | open           |
+| Erstellung : Moveset                                          | open           |
+| Erstellung : Formen                                           | open           |
+| Erstellung : Rüstung                                          | open           |
+| Erstellung : Stat-Übersicht                                   | WIP            |
 
 Datenbank
 
