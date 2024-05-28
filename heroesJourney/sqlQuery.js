@@ -1,6 +1,9 @@
 // In einer Serverdatei (z.B. server.js oder db.js)
 import sqlite3 from 'sqlite3';
 
+// Überschreibbare Query-Sequenz
+let sql;
+
 // Erstelle die Verbindung zur Datenbank
 const db = new sqlite3.Database('./heroesJourney.db', (err) => {
   if (err) {
