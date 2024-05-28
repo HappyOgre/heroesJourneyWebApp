@@ -1,6 +1,6 @@
 # Ziel
 
-Ziel des Projekts ist eine Onepage Webapp für eine Abwandlung des Pen-and-Paper "Das schwarze Auge" - kurz DSA.
+Ziel des Projekts ist eine Onepage Webapp für ein Pen-and-Paper namens "Heroes Journey"
 
 Das Spiel selbst soll, sobald die App fertig gestellt ist, ausschließlich über die Webapp laufen.
 Alle Werte notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Database abgefragt und eingefügt.
