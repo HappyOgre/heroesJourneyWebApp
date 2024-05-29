@@ -2,7 +2,6 @@
     <v-container id="main-container" class="container fill-width" fluid>
         <v-container id="linker-container">
             <v-container id="attribute-und-talente-container">
-
                 <v-row justify="center">
                     <v-card id="attributeUndTalenteTile">
                         <v-card-title>
@@ -12,13 +11,20 @@
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-card id="ausdauerTile" variant="text">    
+                        <v-card id="ausdauerTile" variant="text">
                             <v-card color="var(--orangeTile)">
+                                <div class="levelUpButton">
+                                        <v-card-actions v-if="talentPoints > 0" @click="levelUpStamina()">
+                                            <v-btn variant="tonal">
+                                            +
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </div>
                                 <v-card-title>
                                     Ausdauer
                                 </v-card-title>
                                 <v-card-text>
-                                    13
+                                    {{ stamina }} 
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -27,7 +33,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                    6
+                                    {{ staminaRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -38,7 +44,7 @@
                                     Stärke
                                 </v-card-title>
                                 <v-card-text>
-                                    6
+                                    {{ strength }}
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -47,7 +53,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                    3
+                                    {{ strengthRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -59,7 +65,7 @@
                                     Beweglichkeit
                                 </v-card-title>
                                 <v-card-text>
-                                    15
+                                    {{ agility }}
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -68,7 +74,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                    7
+                                    {{ agilityRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -79,7 +85,7 @@
                                     Intelligenz
                                 </v-card-title>
                                 <v-card-text>
-                                    11
+                                    {{ intelligence }}
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -88,7 +94,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                    5
+                                    {{ intelligenceRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -100,7 +106,7 @@
                                     Weisheit
                                 </v-card-title>
                                 <v-card-text>
-                                    7
+                                    {{ wisdom }}
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -109,7 +115,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                7
+                                {{ wisdomRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -120,7 +126,7 @@
                                     Geist
                                 </v-card-title>
                                 <v-card-text>
-                                    10
+                                    {{ spirit }}
                                 </v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
@@ -129,7 +135,7 @@
                                     Rettungsroll
                                 </v-card-title>
                                 <v-card-text>
-                                    5
+                                    {{ spiritRettungsroll }}
                                 </v-card-text>
                             </v-card>
                         </v-card>
@@ -147,98 +153,98 @@
                         <v-card class="blaues-tile" color="var(--blueTile)">
                             <v-card-title>Arkanum</v-card-title>
                             <v-card-subtitle>ARK</v-card-subtitle>
-                            <v-card-text>8</v-card-text>
+                            <v-card-text>{{ ark }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="blaues-tile" color="var(--blueTile)">
                             <v-card-title>Untersuchung</v-card-title>
                             <v-card-subtitle>UNS</v-card-subtitle>
-                            <v-card-text>5</v-card-text>
+                            <v-card-text>{{ uns }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="blaues-tile" color="var(--blueTile)">
                             <v-card-title>Wissen</v-card-title>
                             <v-card-subtitle>WIS</v-card-subtitle>
-                            <v-card-text>7</v-card-text>
+                            <v-card-text>{{ wis }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="blaues-tile" color="var(--blueTile)">
                             <v-card-title>Überzeugung</v-card-title>
                             <v-card-subtitle>ÜZG</v-card-subtitle>
-                            <v-card-text>5</v-card-text>
+                            <v-card-text>{{ uezg }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="blaues-tile" color="var(--blueTile)">
                             <v-card-title>Magisches Werken</v-card-title>
                             <v-card-subtitle>MgW</v-card-subtitle>
-                            <v-card-text>5</v-card-text> 
+                            <v-card-text>{{ mgw }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="rotes-tile" color="var(--redTile)">
                             <v-card-title>Einschüchtern</v-card-title>
                             <v-card-subtitle>ESC</v-card-subtitle>
-                            <v-card-text>3</v-card-text> 
+                            <v-card-text>{{ esc }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="gelbes-tile" color="var(--yellowTile)">
                             <v-card-title>Menschenkenntnis</v-card-title>
                             <v-card-subtitle>MNK</v-card-subtitle>
-                            <v-card-text>6</v-card-text> 
+                            <v-card-text>{{ mnk }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="gelbes-tile" color="var(--yellowTile)">
                             <v-card-title>Wahrnehmung</v-card-title>
                             <v-card-subtitle>WHN</v-card-subtitle>
-                            <v-card-text>11</v-card-text> 
+                            <v-card-text>{{ whn }}</v-card-text> 
                         </v-card>
                     </v-col>
                     <v-col class="" id="mittlere-spalte-talente">
                             <v-card class="gruenes-tile" color="var(--greenTile)">
                                 <v-card-title>Akrobatik</v-card-title>
                                 <v-card-subtitle>AKR</v-card-subtitle>
-                                <v-card-text>11</v-card-text>
+                                <v-card-text>{{ akr }}</v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gruenes-tile" color="var(--greenTile)">
                                 <v-card-title>Schleichen</v-card-title>
                                 <v-card-subtitle>SCL</v-card-subtitle>
-                                <v-card-text>9</v-card-text>
+                                <v-card-text>{{ scl }}</v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gruenes-tile" color="var(--greenTile)">
                                 <v-card-title>Fingerfertigkeit</v-card-title>
                                 <v-card-subtitle>FFK</v-card-subtitle>
-                                <v-card-text>7</v-card-text>
+                                <v-card-text>{{ ffk }}</v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gruenes-tile" color="var(--greenTile)">
                                 <v-card-title>Täuschung</v-card-title>
                                 <v-card-subtitle>TÄU</v-card-subtitle>
-                                <v-card-text>7</v-card-text>
+                                <v-card-text>{{ taeu }}</v-card-text>
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gruenes-tile" color="var(--greenTile)">
                                 <v-card-title>Feinwerken</v-card-title>
                                 <v-card-subtitle>FWK</v-card-subtitle>
-                                <v-card-text>7</v-card-text> 
+                                <v-card-text>{{ fwk }}</v-card-text> 
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="rotes-tile" color="var(--redTile)">
                                 <v-card-title>Athletik</v-card-title>
                                 <v-card-subtitle>ATL</v-card-subtitle>
-                                <v-card-text>7</v-card-text> 
+                                <v-card-text>{{ atl }}</v-card-text> 
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gelbes-tile" color="var(--yellowTile)">
                                 <v-card-title>Wildnisleben</v-card-title>
                             <v-card-subtitle>WNL</v-card-subtitle>
-                                <v-card-text>5</v-card-text> 
+                                <v-card-text>{{ wnl }}</v-card-text> 
                             </v-card>
                             <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                             <v-card class="gelbes-tile" color="var(--yellowTile)">
                                 <v-card-title>Alchemie</v-card-title>
                             <v-card-subtitle>ALC</v-card-subtitle>
-                                <v-card-text>5</v-card-text> 
+                                <v-card-text>{{ alc }}</v-card-text> 
                             </v-card>
                         
                     </v-col>
@@ -246,49 +252,49 @@
                         <v-card class="graues-tile" color="var(--greyTile)">
                             <v-card-title>Überlebenskunst</v-card-title>
                             <v-card-subtitle>ÜLK</v-card-subtitle>
-                            <v-card-text>8</v-card-text>
+                            <v-card-text>{{ uelk }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="graues-tile" color="var(--greyTile)">
                             <v-card-title>Heilkunde/Anatomie</v-card-title>
-                            <v-card-subtitle>KHA</v-card-subtitle>
-                            <v-card-text>9</v-card-text>
+                            <v-card-subtitle>HKA</v-card-subtitle>
+                            <v-card-text>{{ hka }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="graues-tile" color="var(--greyTile)">
                             <v-card-title>Religion</v-card-title>
                             <v-card-subtitle>RLG</v-card-subtitle>
-                            <v-card-text>7</v-card-text>
+                            <v-card-text>{{ rlg }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="graues-tile" color="var(--greyTile)">
                             <v-card-title>Tier Handhabung</v-card-title>
                             <v-card-subtitle>THB</v-card-subtitle>
-                            <v-card-text>8</v-card-text>
+                            <v-card-text>{{ thb }}</v-card-text>
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="graues-tile" color="var(--greyTile)">
                             <v-card-title>Sammeln</v-card-title>
                             <v-card-subtitle>SAM</v-card-subtitle>
-                            <v-card-text>7</v-card-text> 
+                            <v-card-text>{{ sam }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="rotes-tile" color="var(--redTile)">
                             <v-card-title>Grobwerken</v-card-title>
                             <v-card-subtitle>GWK</v-card-subtitle>
-                            <v-card-text>3</v-card-text> 
+                            <v-card-text>{{ gwk }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="gelbes-tile" color="var(--yellowTile)">
                             <v-card-title>Schauspiel</v-card-title>
                             <v-card-subtitle>SCH</v-card-subtitle>
-                            <v-card-text>7</v-card-text> 
+                            <v-card-text>{{ sch }}</v-card-text> 
                         </v-card>
                         <v-divider :thickness="10" class="border-opacity-0"></v-divider>
                         <v-card class="gelbes-tile" color="var(--yellowTile)">
                             <v-card-title>Feilschen</v-card-title>
                             <v-card-subtitle>FLN</v-card-subtitle>
-                            <v-card-text>5</v-card-text> 
+                            <v-card-text>{{ fln }}</v-card-text> 
                         </v-card>
                     </v-col>
                 </v-row> 
@@ -306,19 +312,19 @@
                         <v-col>
                             <v-card id="leTile" color="var(--orangeTile)">
                                 <v-card-title>LE</v-card-title>
-                                <v-card-text>105</v-card-text>
+                                <v-card-text>{{ le }}</v-card-text>
                             </v-card>
                         </v-col>
                         <v-col>
                             <v-card id="defTile" color="var(--redTile)">
                                 <v-card-title>DEF</v-card-title>
-                                <v-card-text>1</v-card-text>
+                                <v-card-text>{{ def }}</v-card-text>
                             </v-card>
                         </v-col>
                         <v-col>
                             <v-card id="koennenTile" color="#5a7b9c">
                                 <v-card-title>Können</v-card-title>
-                                <v-card-text>1</v-card-text>
+                                <v-card-text>{{ koennen }}</v-card-text>
                             </v-card>
                         </v-col>
                     </v-row>
@@ -340,7 +346,7 @@
                                                 AT
                                             </v-card-title>
                                             <v-card-text>
-                                                6
+                                                {{ at }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -350,7 +356,7 @@
                                                 GW
                                             </v-card-title>
                                             <v-card-text>
-                                                13
+                                                {{ gw }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -362,7 +368,7 @@
                                                 FK
                                             </v-card-title>
                                             <v-card-text>
-                                                16
+                                                {{ fk }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -372,7 +378,7 @@
                                                 EM
                                             </v-card-title>
                                             <v-card-text>
-                                                8
+                                                {{ em }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -384,7 +390,7 @@
                                                 ZA
                                             </v-card-title>
                                             <v-card-text>
-                                                8
+                                                {{ za }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -394,7 +400,7 @@
                                                 BS
                                             </v-card-title>
                                             <v-card-text>
-                                                8
+                                                {{ bs }}
                                             </v-card-text>
                                         </v-card>
                                     </v-col>
@@ -415,7 +421,7 @@
                                             KRIT
                                         </v-card-title>
                                         <v-card-text>
-                                            4
+                                            {{ crit }}
                                         </v-card-text>
                                     </v-card>
                                     <v-divider :thickness="135" class="border-opacity-0"></v-divider>
@@ -424,7 +430,7 @@
                                             H
                                         </v-card-title>
                                         <v-card-text>
-                                            15
+                                            {{ haste }}
                                         </v-card-text>
                                     </v-card>
                                 </v-col>
@@ -493,13 +499,22 @@
     </v-container>
 </template>
 
-<script>
-    export default {
-        name: 'Stats',
-    }
+<script setup>
+
+import {
+    stamina, agility, wisdom, strength, intelligence, spirit, koennen,
+    level, staminaRettungsroll, agilityRettungsroll, wisdomRettungsroll,
+    strengthRettungsroll, intelligenceRettungsroll, spiritRettungsroll,
+    ark, uns, wis, uezg, mgw, esc, mnk, whn, akr, scl, ffk, taeu, fwk,
+    atl, wnl, alc, uelk, hka, rlg, thb, sam, gwk, sch, fln, at, gw, fk,
+    em, za, bs, le, crit, haste, def, talentPoints } from './calcs'
+import { levelUpStamina } from './calcs'
+
+//let staminaPoints = localStorage.setItem("staminaPoints", atPoints[0].points.value.toString());
+
 </script>
 
-<style >
+<style>
 
 :root {
     --orangeTile: #914420;
@@ -508,6 +523,12 @@
     --blueTile: #0c4278;
     --greyTile: #515752;
     --yellowTile: #a1a326;
+}
+
+.levelUpButton {
+    position: absolute;
+    right: 0;
+    top: 17px;
 }
 
 .tester {

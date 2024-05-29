@@ -8,7 +8,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/mainHand.png"
+                                    src="../../assets/mainHand.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -33,7 +33,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/offHand.png"
+                                    src="../../assets/offHand.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -59,7 +59,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/hals.png"
+                                    src="../../assets/hals.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -83,7 +83,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/schulter.png"
+                                    src="../../assets/schulter.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -107,7 +107,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/haende.png"
+                                    src="../../assets/haende.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -133,7 +133,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/helm.png"
+                                    src="../../assets/helm.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -157,7 +157,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/chest.png"
+                                    src="../../assets/chest.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -181,7 +181,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/hose.png"
+                                    src="../../assets/hose.png"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -207,7 +207,7 @@
                             <v-container class="justify-center fill-height">
                                 <v-avatar>
                                     <v-img
-                                        src="../assets/trinketEins.jpg"
+                                        src="../../assets/trinketEins.jpg"
                                     ></v-img>
                                 </v-avatar>
                             </v-container>
@@ -231,7 +231,7 @@
                             <v-container class="justify-center fill-height">
                                 <v-avatar>
                                     <v-img
-                                        src="../assets/ringEins.jpg"
+                                        src="../../assets/ringEins.jpg"
                                     ></v-img>
                                 </v-avatar>
                             </v-container>
@@ -257,7 +257,7 @@
                             <v-container class="justify-center fill-height">
                                 <v-avatar>
                                     <v-img
-                                        src="../assets/trinketZwei.jpg"
+                                        src="../../assets/trinketZwei.jpg"
                                     ></v-img>
                                 </v-avatar>
                             </v-container>
@@ -281,7 +281,7 @@
                         <v-container class="justify-center fill-height">
                             <v-avatar>
                                 <v-img
-                                    src="../assets/ringZwei.jpg"
+                                    src="../../assets/ringZwei.jpg"
                                 ></v-img>
                             </v-avatar>
                         </v-container>
@@ -305,15 +305,7 @@
     </v-container>
 </template>
 
-<script>
-
-
-
-export default {
-  name: 'Ruestung',
-}
-
-
+<script setup>
 
 </script>
 

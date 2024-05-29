@@ -157,21 +157,14 @@
   </vApp>
 </template>
 
-<script>
+<script setup>
 
  //import db from '../../sqlQuery.js';
 
-export default {
-  name: 'Index',
-  data() {
-    return {
-      mainSidebarDrawer: true,
-      level: "4",
-      le: "105",
-      def: "1"
-    }
-  }
-}
+const mainSidebarDrawer = true;
+const level = "4";
+const le = "105";
+const def = "1"
 </script>
 
 

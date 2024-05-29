@@ -6,7 +6,7 @@
                     <v-card id="steckbrief" height="100%">
                         <v-card-title id="bild-container" class="justify-center">
                                 <v-img 
-                                src="../assets/arthania.png"
+                                src="../../assets/arthania.png"
                                 :width="180"                
                                 class="mx-auto"                
                                 />
@@ -91,12 +91,8 @@
     </v-container>
 </template>
 
-<script>
-export default {
-    name: 'Klasse',
-    data() {
-        return {
-            passiv: [
+<script setup>
+const passiv = [
                 {
                     name: "Geübter Schütze",
                     beschreibung: "Nähe zum Ziel gibt keinen Malus mehr. Wenn der Charakter erhöht steht, oder ein freies Schsusfeld hat ist sein Fernkampf um 1 erleichtert"
@@ -109,8 +105,9 @@ export default {
                     name: "Treue Begleiter",
                     beschreibung: "Erlaubt es Euch eine Bestie zu zähmen. Die Bestie attackiert vor Euch und verursacht NK/2 Schaden. || Level 10: Eure Bestie markiert Ihr aktuelles Ziel mit \"Markierung des Waldläufers\". Dadurch können zwei \"Markierung des Waldläufers\" zeitgleich aktiv sein"
                 }
-            ],
-            buff: [
+            ];
+
+const buff = [
                 {
                     name: "Salve",
                     beschreibung: "Erlaubt es euch diese Runde eine Aktion mehr zu wirken",
@@ -129,8 +126,9 @@ export default {
                     cd: "10 Runden",
                     pb: "",
                 }
-            ],
-            angriff: [
+            ];
+            
+const angriff = [
                 {
                     name: "Gezielter Schuss",
                     beschreibung: "Ihr wirkt einen gezielten Schuss, erhöht den Schaden von \"Schneller Schuss\" um 2",
@@ -167,9 +165,6 @@ export default {
                     schaden: "19",
                 }
             ]
-        }
-    }
-}
 </script>
 
 <style scoped>
