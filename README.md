@@ -18,8 +18,6 @@ Alle notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Database a
 
 ## Updates
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
-
 Frontend Design
 
 | Schritt                                                       | Status         |
