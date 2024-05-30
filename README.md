@@ -3,7 +3,7 @@
 Ziel des Projekts ist eine Onepage Webapp für ein Pen-and-Paper namens "Heroes Journey"
 
 Das Spiel selbst soll, sobald die App fertig gestellt ist, ausschließlich über die Webapp laufen.
-Alle Werte notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Database abgefragt und eingefügt.
+Alle notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Database abgefragt und eingefügt.
 
 ## ❗️ Techstack
 
