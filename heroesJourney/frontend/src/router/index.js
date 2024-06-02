@@ -8,12 +8,12 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Index from '../components/arthania/index.vue'
-import Stats from '../components/arthania/stats.vue'
-import Ruestung from '../components/arthania/ruestung.vue'
-import Formen from '../components/arthania/formen.vue'
-import Moveset from '../components/arthania/moveset.vue'
-import Klasse from '../components/arthania/klasse.vue'
+import Index from '../../src/components/arthania/index.vue'
+import Stats from '../../src/components/arthania/stats.vue'
+import Ruestung from '../../src/components/arthania/ruestung.vue'
+import Formen from '../../src/components/arthania/formen.vue'
+import Moveset from '../../src/components/arthania/moveset.vue'
+import Klasse from '../../src/components/arthania/klasse.vue'
 
 
 const routes = [

@@ -1,0 +1,23 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+    },
+    "dependencies": {
+      "vue": "^3.2.13",
+      "vue-router": "^4.0.12",
+      "vuetify": "^3.0.0",
+      "unplugin-fonts": "^0.0.0",
+      "unplugin-vue-components": "^0.0.0",
+      "unplugin-vue-router": "^0.0.0"
+    },
+    "devDependencies": {
+      "vite": "^5.2.11",
+      "@vitejs/plugin-vue": "^1.6.0",
+      "vite-plugin-vuetify": "^1.0.0"
+    }
+  }
+  

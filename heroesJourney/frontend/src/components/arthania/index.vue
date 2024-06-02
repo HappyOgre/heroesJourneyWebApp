@@ -147,7 +147,7 @@
         </v-col> 
       </v-row>
       <v-spacer></v-spacer>
-        <v-img src="../assets/Hejo_logo.png"></v-img>
+        <v-img src="../../../public/Hejo_logo.png"></v-img>
     </v-app-bar>
 
 

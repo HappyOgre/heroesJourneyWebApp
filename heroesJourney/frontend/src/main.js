@@ -5,7 +5,7 @@
  */
 
 // Plugins
-import { registerPlugins } from '@/plugins'
+import { registerPlugins } from './plugins'
 
 // Components
 import App from './App.vue'
@@ -13,8 +13,14 @@ import App from './App.vue'
 // Composables
 import { createApp } from 'vue'
 
+import router from './router'
+import axios from 'axios';
+
+
 const app = createApp(App)
 
 registerPlugins(app)
 
-app.mount('#app')
+app.config.globalProperties$axios = axios;
+
+app.use(router).mount('#app');

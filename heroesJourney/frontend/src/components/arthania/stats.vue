@@ -507,8 +507,8 @@ import {
     strengthRettungsroll, intelligenceRettungsroll, spiritRettungsroll,
     ark, uns, wis, uezg, mgw, esc, mnk, whn, akr, scl, ffk, taeu, fwk,
     atl, wnl, alc, uelk, hka, rlg, thb, sam, gwk, sch, fln, at, gw, fk,
-    em, za, bs, le, crit, haste, def, talentPoints } from './calcs'
-import { levelUpStamina } from './calcs'
+    em, za, bs, le, crit, haste, def, talentPoints } from './calcs.ts'
+import { levelUpStamina } from './calcs.ts'
 
 //let staminaPoints = localStorage.setItem("staminaPoints", atPoints[0].points.value.toString());
 
