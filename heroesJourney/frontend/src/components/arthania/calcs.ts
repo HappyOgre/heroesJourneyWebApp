@@ -1,14 +1,16 @@
 import { ref, computed } from 'vue'
 import axios from 'axios';
 
-
 export const baseAt = ref(0);
 export const armorAt = ref(0);
 export const koennen = ref(0);
 export const classBoni = ref(0);
 export const abilityBonus = ref(0);
 export const level = ref(0);
-export let talentPoints = ref(1);
+export const talentPoints = ref(0);
+export const attributePoints = ref(0);
+export const baseArk = ref(0);
+
 
 export const atPoints = [
     {
@@ -53,6 +55,31 @@ async function loadData() {
         koennen.value = data.koennen; // koennen
         level.value = data.level; // level 
         talentPoints.value = data.talentPoints; // talent punkte
+        attributePoints.value = data.attributePoints; // attribut punkte
+        talents[0].points.value = data.ark; // ark
+        talents[1].points.value = data.uns; // uns
+        talents[2].points.value = data.wis; // wis
+        talents[3].points.value = data.uezg; // uezg
+        talents[4].points.value = data.mgw; // mgw
+        talents[5].points.value = data.esc; // esc
+        talents[6].points.value = data.mnk; // mnk 
+        talents[7].points.value = data.whn; // whn
+        talents[8].points.value = data.akr; // akr 
+        talents[9].points.value = data.scl; // scl
+        talents[10].points.value = data.ffk; // ffk
+        talents[11].points.value = data.taeu; // taue
+        talents[12].points.value = data.fwk; // fwk
+        talents[13].points.value = data.atl; // atl
+        talents[14].points.value = data.wnl; // wnl
+        talents[15].points.value = data.alc; // alc
+        talents[16].points.value = data.uelk; // uelk
+        talents[17].points.value = data.hka; // hka
+        talents[18].points.value = data.rlg; // rlg
+        talents[19].points.value = data.thb; // thb
+        talents[20].points.value = data.sam; // sam
+        talents[21].points.value = data.gwk; // gwk
+        talents[22].points.value = data.sch; // sch
+        talents[23].points.value = data.fln; // fln
     } catch (err) {
         console.error('Fehler beim Laden der Stats:', err.message);
     }
@@ -65,8 +92,52 @@ export const calcKoennen = computed(() => Math.floor(baseAt.value + armorAt.valu
 export const calcKlasse = computed(() => Math.floor(baseAt.value + armorAt.value + classBoni.value));
 export const calcKlasseKoennen = computed(() => Math.floor(baseAt.value + armorAt.value + classBoni.value + koennen.value));
 
-// Erstellung des Attribut-Arrays mit den jeweiligen Abkürzungen, bei 0 Punkten startend
 
+const attributeMap = {
+    stamina: 0,
+    agility: 1,
+    wisdom: 2,
+    strength: 3,
+    intelligence: 4,
+    spirit: 5
+};
+const levelUpAttribute = async (attribute: string) => {
+    const attributeIndex = attributeMap[attribute];
+    atPoints[attributeIndex].points.value += 1;
+    attributePoints.value -= 1;
+
+    const requestBody: { [key: string]: number } = {
+        newAttributePoints: attributePoints.value
+    };
+
+    requestBody[`new${attribute.charAt(0).toUpperCase() + attribute.slice(1)}`] = atPoints[attributeIndex].points.value;
+
+    try {
+        await axios.post(`http://localhost:3001/api/update${attribute.charAt(0).toUpperCase() + attribute.slice(1)}`, requestBody);
+        console.log(`${attribute} und AP aktualisiert: `, atPoints[attributeIndex].points.value);
+    } catch (error) {
+        console.error(`Aktualisieren von ${attribute} fehlgeschlagen: `, error);
+    }
+};
+
+export async function levelUpStamina() {
+    await levelUpAttribute('stamina');
+}
+export async function levelUpAgility() {
+    await levelUpAttribute('agility');
+}
+export async function levelUpWisdom() {
+    await levelUpAttribute('wisdom');
+}
+export async function levelUpStrength() {
+    await levelUpAttribute('strength');
+}
+export async function levelUpIntelligence() {
+    await levelUpAttribute('intelligence');
+}
+export async function levelUpSpirit() {
+    await levelUpAttribute('spirit');
+}
 
 /*
 export const ats = [
@@ -75,9 +146,77 @@ export const ats = [
 ];
 export const atPoints = ats.map(point => ({ point, points: ref(0) }));
 */
-export function levelUpStamina() {
-    return atPoints[0].points.value += 1;
+
+
+/*
+export async function levelUpStamina() {
+    atPoints[0].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateStamina', { newStamina: atPoints[0].points.value, newTalentPoints: talentPoints.value });
+        console.log('Stamina und TP aktuallisiert: ', atPoints[0].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Stamina aktuallisieren')
+    }
 }
+
+
+export async function levelUpAgility() {
+    atPoints[1].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateAgility', { newAgility: atPoints[1].points.value, newTalentPoints: talentPoints.value });
+        console.log('Agility und TP aktuallisiert: ', atPoints[1].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Agility aktuallisieren')
+    }
+}
+
+export async function levelUpWisdom() {
+    atPoints[2].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateWisdom', { newWisdom: atPoints[2].points.value, newTalentPoints: talentPoints.value });
+        console.log('Wisdom und TP aktuallisiert: ', atPoints[2].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Wisdom aktuallisieren')
+    }
+}
+
+export async function levelUpStrength() {
+    atPoints[3].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateStrength', { newStrength: atPoints[3].points.value, newTalentPoints: talentPoints.value });
+        console.log('Strength und TP aktuallisiert: ', atPoints[3].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Strength aktuallisieren')
+    }
+}
+
+export async function levelUpIntelligence() {
+    atPoints[4].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateIntelligence', { newIntelligence: atPoints[4].points.value, newTalentPoints: talentPoints.value });
+        console.log('Intelligence und TP aktuallisiert: ', atPoints[4].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Intelligence aktuallisieren')
+    }
+}
+
+export async function levelUpSpirit() {
+    atPoints[5].points.value += 1;
+    talentPoints.value -= 1;
+    try {
+        await axios.post('http://localhost:3001/api/updateSpirit', { newSpirit: atPoints[5].points.value, newTalentPoints: talentPoints.value });
+        console.log('Spirit und TP aktuallisiert: ', atPoints[5].points.value, talentPoints.value);
+    } catch (error) {
+        console.error('Fehler beim Spirit aktuallisieren')
+    }
+}
+
+*/
 
 export const stamina = computed(() => Math.floor(calc.value + atPoints[0].points.value));
 export const agility = computed(() => Math.floor(calc.value + atPoints[1].points.value));
@@ -115,7 +254,7 @@ export const spiritRettungsroll = computed(() => rettungsrollsCapped.value[5]);
 
 //          -------------------- TALENTE ----------------------------
 
-// Erstellung des Talent-Arrays mit den jeweiligen Abkürzungen, bei 0 Punkten startend
+// Erstellung des Talent-Arrays mit den jeweiligen Abkürzungen, bei ref(0) Punkten startend
 export const talentNames = [
     "ark", "uns", "wis", "uezg", "mgw", "esc", "mnk", "whn", "akr", "scl",
     "ffk", "taeu", "fwk", "atl", "wnl", "alc", "uelk", "hka", "rlg", "thb",
@@ -130,6 +269,7 @@ export const strengthTalentCalc = computed(() => Math.floor(strength.value / 2 +
 export const intelligenceTalentCalc = computed(() => Math.floor(intelligence.value / 2 + armorAt.value));
 export const spiritTalentCalc = computed(() => Math.floor(spirit.value / 2 + armorAt.value));
 
+/*
 talents[0].points.value += 0; //ARK
 talents[1].points.value += 0; //UNS
 talents[2].points.value += 0; //WIS
@@ -154,6 +294,105 @@ talents[20].points.value += 0; //SAM
 talents[21].points.value += 0; //GWK
 talents[22].points.value += 0; //SCH
 talents[23].points.value += 0; //FLN
+*/
+
+const talentMap = talentNames.reduce((map, talent, index) => {
+    map[talent] = index;
+    return map;
+}, {});
+const levelUpTalent = async (talent: string) => {
+
+    const talentIndex = talentMap[talent];
+    talents[talentIndex].points.value += 1;
+    talentPoints.value -= 1;
+
+    const requestBody: { [key: string]: number} = {
+        newTalentPoints: talentPoints.value
+    };
+
+    requestBody[`new${talent.charAt(0).toUpperCase() + talent.slice(1)}`] = talents[talentIndex].points.value;
+
+    try {
+        await axios.post(`http://localhost:3001/api/update${talent.charAt(0).toUpperCase() + talent.slice(1)}`, requestBody);
+        console.log(`${talent} und TP aktualisiert: `, talentPoints[talentIndex].points.value);
+    } catch (error) {
+        console.error(`Aktualisieren von ${talent} fehlgeschlagen: `, error);
+    }
+};
+
+
+export async function levelUpArk() {
+    await levelUpTalent('ark');
+}
+export async function levelUpUns() {
+    await levelUpTalent('uns');
+}
+export async function levelUpWis() {
+    await levelUpTalent('wis');
+}
+export async function levelUpUezg() {
+    await levelUpTalent('uezg');
+}
+export async function levelUpMgw() {
+    await levelUpTalent('mgw');
+}
+export async function levelUpEsc() {
+    await levelUpTalent('esc');
+}
+export async function levelUpMnk() {
+    await levelUpTalent('mnk');
+}
+export async function levelUpWhn() {
+    await levelUpTalent('whn');
+}
+export async function levelUpAkr() {
+    await levelUpTalent('akr');
+}
+export async function levelUpScl() {
+    await levelUpTalent('scl');
+}
+export async function levelUpFfk() {
+    await levelUpTalent('ffk');
+}
+export async function levelUpTaue() {
+    await levelUpTalent('taue');
+}
+export async function levelUpFwk() {
+    await levelUpTalent('fwk');
+}
+export async function levelUpAtl() {
+    await levelUpTalent('atl');
+}
+export async function levelUpWnl() {
+    await levelUpTalent('wnl');
+}
+export async function levelUpAlc() {
+    await levelUpTalent('alc');
+}
+export async function levelUpUelk() {
+    await levelUpTalent('uelk');
+}
+export async function levelUpHka() {
+    await levelUpTalent('hka');
+}
+export async function levelUpRlg() {
+    await levelUpTalent('rlg');
+}
+export async function levelUpThb() {
+    await levelUpTalent('thb');
+}
+export async function levelUpSam() {
+    await levelUpTalent('sam');
+}
+export async function levelUpGwk() {
+    await levelUpTalent('gwk');
+}
+export async function levelUpSch() {
+    await levelUpTalent('sch');
+}
+export async function levelUpFln() {
+    await levelUpTalent('fln');
+}
 
 export const ark = computed(() => Math.floor(intelligenceTalentCalc.value + talents[0].points.value));
 export const uns = computed(() => Math.floor(intelligenceTalentCalc.value + talents[1].points.value));
@@ -210,7 +449,7 @@ export const haste = computed(() => Math.floor(agility.value + level.value / 6 -
 export const crit = computed(() => Math.floor(level.value / 8 + armorAt.value + 1));
 export const le = computed(() => Math.floor(level.value * 5 + stamina.value * 5 + armorAt.value));
 
-export const defBase= computed((): number => Math.max(strength.value, agility.value));
+export const defBase = computed((): number => Math.max(strength.value, agility.value));
 function defensiveCalculated(defBase: number) {
     let defense = 0;
     if (defBase >= 26) {

@@ -32,79 +32,79 @@
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Können</v-list-item-title>
-              <v-list-item-text>1</v-list-item-text>
+              <v-list-item-text>{{ koennen }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>AT</v-list-item-title>
-              <v-list-item-text>6</v-list-item-text>
+              <v-list-item-text>{{ at }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>FK</v-list-item-title>
-              <v-list-item-text>16</v-list-item-text>
+              <v-list-item-text>{{ fk }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>ZA</v-list-item-title>
-              <v-list-item-text>8</v-list-item-text>
+              <v-list-item-text>{{ za }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>GW</v-list-item-title>
-              <v-list-item-text>13</v-list-item-text>
+              <v-list-item-text>{{ gw }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>EM</v-list-item-title>
-              <v-list-item-text>8</v-list-item-text>
+              <v-list-item-text>{{ em }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>BS</v-list-item-title>
-              <v-list-item-text>8</v-list-item-text>
+              <v-list-item-text>{{ bs }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Krit</v-list-item-title>
-              <v-list-item-text>4</v-list-item-text>
+              <v-list-item-text>{{ crit }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>H</v-list-item-title>
-              <v-list-item-text>15</v-list-item-text>
+              <v-list-item-text>{{ haste }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Aktionen</v-list-item-title>
-              <v-list-item-text>1</v-list-item-text>
+              <v-list-item-text>{{ action }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Buffs</v-list-item-title>
-              <v-list-item-text>1</v-list-item-text>
+              <v-list-item-text>{{ buff }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Bonusakt</v-list-item-title>
-              <v-list-item-text>1</v-list-item-text>
+              <v-list-item-text>{{ bonus }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Reichweide</v-list-item-title>
-              <v-list-item-text>5</v-list-item-text>
+              <v-list-item-text>{{ range }}</v-list-item-text>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -147,7 +147,7 @@
         </v-col> 
       </v-row>
       <v-spacer></v-spacer>
-        <v-img src="../../../public/Hejo_logo.png"></v-img>
+        <v-img src="./Hejo_logo.png"></v-img>
     </v-app-bar>
 
 
@@ -159,12 +159,12 @@
 
 <script setup>
 
- //import db from '../../sqlQuery.js';
+import { ref } from 'vue'
+import { level, le, def, koennen, at, fk, za, gw, em, bs, crit, haste } from './calcs'
 
-const mainSidebarDrawer = true;
-const level = "4";
-const le = "105";
-const def = "1"
+const mainSidebarDrawer = ref(true)
+const topBar = ref(true)
+
 </script>
 
 
