@@ -124,6 +124,19 @@ talents.forEach(talent => {
 });
 
 
+app.get('/api/arthaniaMoveset', (req, res) => {
+    const query = `SELECT Name, Form, field3, AT_Name, AT_Art, AT_Beschreibung, CD, BS_PB, AT_DMG_1, "%AT1", AT_DMG_2, "%AT2", AT_DMG_3, Damage
+    FROM movesets WHERE Name = 1 AND AT_Name IS NOT null`
+
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({ error: 'Loading moveset failed'});
+        }
+        res.json({ arthania: rows});
+    });
+});
+
 /* 
 app.post('/api/updateStamina', (req, res) => {
     const newStamina = req.body.newStamina;

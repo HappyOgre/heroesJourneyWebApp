@@ -50,5 +50,11 @@ export default defineConfig({
   },
   server: {
     port: 8080,
+    fs: {
+      allow: [
+        'D:/GitHub/heroesJourneyWebApp/heroesJourney/frontend',
+        'D:/GitHub/heroesJourneyWebApp/heroesJourney/node_modules/@mdi/font/fonts'
+      ]
+    }
   },
 })

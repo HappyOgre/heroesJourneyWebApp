@@ -14,7 +14,7 @@ import Ruestung from '../../src/components/arthania/ruestung.vue'
 import Formen from '../../src/components/arthania/formen.vue'
 import Moveset from '../../src/components/arthania/moveset.vue'
 import Klasse from '../../src/components/arthania/klasse.vue'
-
+import Inventar from '../../src/components/arthania/inventar.vue'
 
 const routes = [
   {path: '/', 
@@ -37,8 +37,12 @@ const routes = [
         component: Moveset
       },
       {
-        path: 'klasse',
+        path: 'char',
         component: Klasse
+      },
+      {
+        path: 'inventar',
+        component: Inventar
       }
     ]
   }

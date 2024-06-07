@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Arthania: typeof import('./src/components/arthania/index.vue')['default']
     Formen: typeof import('./src/components/arthania/formen.vue')['default']
+    Inventar: typeof import('./src/components/arthania/inventar.vue')['default']
     Klasse: typeof import('./src/components/arthania/klasse.vue')['default']
     Moveset: typeof import('./src/components/arthania/moveset.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

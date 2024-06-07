@@ -138,12 +138,12 @@
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Notes</v-btn>
         </v-col>  
+      -->
         <v-col class="btnCol">
-          <v-btn variant="tonal" class="mx-1">Items</v-btn>
+          <RouterLink class="unlink" to="/inventar"><v-btn variant="tonal" class="mx-1">Inventar</v-btn></RouterLink>
         </v-col>
--->
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/klasse"><v-btn variant="tonal" class="mx-1">Klasse</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/char"><v-btn variant="tonal" class="mx-1">Charakter</v-btn></RouterLink>
         </v-col> 
       </v-row>
       <v-spacer></v-spacer>
