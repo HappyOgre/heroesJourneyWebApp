@@ -21,14 +21,14 @@ export const db = new sqlite3.Database(join(__dirname, 'test.db'), sqlite3.OPEN_
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/arthania', (req, res) => {
-    const query = 'SELECT * FROM arthania';
+app.get('/api/stats', (req, res) => {
+    const query = 'SELECT * FROM stats';
     db.all(query, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
             return;
         }
-        res.json({ arthania: rows });
+        res.json({ stats: rows });
     });
 });
 
@@ -39,14 +39,14 @@ const updateAttribute = (attribute) => {
 
         db.serialize(() => {
             db.run('BEGIN TRANSACTION');
-            db.run(`UPDATE arthania SET ${attribute} = ?`, [newValue], (err) => {
+            db.run(`UPDATE stats SET ${attribute} = ?`, [newValue], (err) => {
                 if (err) {
                     db.run('ROLLBACK');
                     console.error(`Aktualisieren von ${attribute} fehlgeschlagen: `, err.mesasge);
                     return res.status(500).json({ error: 'AT update failed' });
                 }
             
-            db.run('UPDATE arthania SET attributePoints = ?', [newAttributePoints], (err) => {
+            db.run('UPDATE stats SET attributePoints = ?', [newAttributePoints], (err) => {
                 if (err) {
                     db.run('ROLLBACK');
                     console.error('Aktualisieren der Attributepunkte fehlgeschlagen: ', err.message);
@@ -90,13 +90,13 @@ const updateTalent = (talent) => {
         const newValue = req.body[`new${talent.charAt(0).toUpperCase() + talent.slice(1)}`];
         const newTalentPoints = req.body.newTalentPoints;
         db.run('BEGIN TRANSACTION');
-        db.run(`UPDATE arthania SET ${talent} = ?`, [newValue], (err) => {
+        db.run(`UPDATE stats SET ${talent} = ?`, [newValue], (err) => {
             if (err) {
                 db.run('ROLLBACK');
                 console.error(`Aktualisieren von ${talent} fehlgeschlagen: `, err.message);
                 return res.status(500).json({ error: 'Talent update failed' });
             }
-        db.run('UPDATE arthania SET talentPoints = ?', [newTalentPoints], (err) => {
+        db.run('UPDATE stats SET talentPoints = ?', [newTalentPoints], (err) => {
             if (err) {
                 db.run('ROLLBACK');
                 console.error('Aktualisieren der Talentpunkte fehlgeschlagen: ', err.message);
@@ -131,11 +131,24 @@ app.get('/api/arthaniaMoveset', (req, res) => {
     db.all(query, [], (err, rows) => {
         if (err) {
             console.error(err.message);
-            return res.status(500).json({ error: 'Loading moveset failed'});
+            return res.status(500).json({ error: 'Loading moveset failed' });
         }
         res.json({ arthania: rows});
     });
 });
+
+app.get('/api/items', (req, res) => {
+    const query = 'SELECT * FROM items'
+
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({ error: 'Loading items failed' })
+        }
+        res.json({ items: rows })
+    })
+})
+
 
 /* 
 app.post('/api/updateStamina', (req, res) => {

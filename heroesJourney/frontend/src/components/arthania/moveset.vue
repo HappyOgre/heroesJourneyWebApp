@@ -194,18 +194,23 @@ const passiveTableHeaders = [
 const buffTableHeaders = [
     { title: 'Name', value: 'AT_Name' },
     { title: 'Beschreibung', value: 'AT_Beschreibung' },
-    { title: 'CD', value: 'CD' },
     { title: 'Schaden', value: 'Damage' },
+    { title: 'Abklingzeit', value: 'CD' },
+    // { title: 'Use', value: 'use' }
 ];
 
 const attackTableHeaders = [
     { title: 'Name', value: 'AT_Name' },
     { title: 'Beschreibung', value: 'AT_Beschreibung' },
-    { title: 'CD', value: 'CD' },
     { title: 'Probe', value: 'BS_PB' },
     { title: 'Schaden', value: 'Damage' },
+    { title: 'Abklingzeit', value: 'CD' },
+    // { title: 'Use', value: 'use' }
 ];
 
+function convertCD(str) {
+    return str.endsWith('R') ? str.replace('R', ' Runden') : str;
+}
 
 async function loadData() {
     try {
@@ -213,27 +218,27 @@ async function loadData() {
         console.log('API Response:', response.data); // Überprüfen der API-Antwort
 
         const data = response.data.arthania;
-        
+
         passive.value = data.filter(item => item.AT_Art === "P" && item.Form === "Klasse_1");
-        buffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Klasse_1");
-        attacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Klasse_1");
+        buffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Klasse_1").map(item => ({ ...item, CD: convertCD(item.CD) }));
+        attacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Klasse_1").map(item => ({ ...item, CD: convertCD(item.CD) }));
         phoenixPassive.value = data.filter(item => item.AT_Art === "P" && item.Form === "Phoenix");
-        phoenixBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Phoenix");
-        phoenixAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Phoenix");
+        phoenixBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Phoenix").map(item => ({ ...item, CD: convertCD(item.CD) }));
+        phoenixAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Phoenix").map(item => ({ ...item, CD: convertCD(item.CD) }));
         guilmonPassive.value = data.filter(item => item.AT_Art === "P" && item.Form === "Guilmon");
-        guilmonBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Guilmon");
-        guilmonAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Guilmon");
+        guilmonBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Guilmon").map(item => ({ ...item, CD: convertCD(item.CD) }));
+        guilmonAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Guilmon").map(item => ({ ...item, CD: convertCD(item.CD) }));
         agumonPassive.value = data.filter(item => item.AT_Art === "P" && item.Form === "Agumon");
-        agumonBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Agumon");
-        agumonAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Agumon");
+        agumonBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Agumon").map(item => ({ ...item, CD: convertCD(item.CD) }));
+        agumonAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Agumon").map(item => ({ ...item, CD: convertCD(item.CD) }));
         raszagethPassive.value = data.filter(item => item.AT_Art === "P" && item.Form === "Raszageth");
-        raszagethBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Raszageth");
-        raszagethAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Raszageth");
+        raszagethBuffs.value = data.filter(item => item.AT_Art === "B" && item.Form === "Raszageth").map(item => ({ ...item, CD: convertCD(item.CD) }));
+        raszagethAttacks.value = data.filter(item => item.AT_Art === "S" && item.Form === "Raszageth").map(item => ({ ...item, CD: convertCD(item.CD) }));
+
     } catch (err) {
         console.error('Fehler beim Laden der Stats:', err.message);
     }
 }
-
 loadData();
 
 </script>

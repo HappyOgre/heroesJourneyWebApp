@@ -10,7 +10,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Index from '../../src/components/arthania/index.vue'
 import Stats from '../../src/components/arthania/stats.vue'
-import Ruestung from '../../src/components/arthania/ruestung.vue'
+import Ausruestung from '../components/arthania/ausruestung.vue'
 import Formen from '../../src/components/arthania/formen.vue'
 import Moveset from '../../src/components/arthania/moveset.vue'
 import Klasse from '../../src/components/arthania/klasse.vue'
@@ -25,8 +25,8 @@ const routes = [
         component: Stats
       },
       {
-        path: 'ruestung',
-        component: Ruestung
+        path: 'ausruestung',
+        component: Ausruestung
       },
       {
         path: 'formen',

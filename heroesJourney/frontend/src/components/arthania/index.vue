@@ -118,7 +118,7 @@
             <RouterLink class="unlink" to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/ruestung"><v-btn variant="tonal" class="mx-1">Rüstung</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/ausruestung"><v-btn variant="tonal" class="mx-1">Ausrüstung</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
           <RouterLink class="unlink" to="/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>

@@ -41,10 +41,10 @@ export const atPoints = [
 
 async function loadData() {
     try {
-        const response = await axios.get('http://localhost:3001/api/arthania');
+        const response = await axios.get('http://localhost:3001/api/stats');
         console.log('API Response:', response.data); // Überprüfen der API-Antwort
 
-        const data = response.data.arthania[0];
+        const data = response.data.stats[0];
         atPoints[0].points.value = data.stamina; // stamina
         atPoints[1].points.value = data.agility; // agility
         atPoints[2].points.value = data.wisdom; // wisdom
