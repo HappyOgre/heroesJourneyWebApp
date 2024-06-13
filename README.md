@@ -15,8 +15,3 @@ Alle notwendigen Werte werden dynamisch aus einer zugehörigen SQlite Database a
     [Express.js](https://expressjs.com/)
 - Datenbank
     [SQlite](https://www.sqlite.org/)
-
-
-## Updates
-
-- 03.06. Stats Frontend+Backend done for now

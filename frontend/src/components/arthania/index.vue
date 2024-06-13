@@ -113,7 +113,7 @@
 
     <!-- Navbar mit Buttons oben fixiert -->
     <v-app-bar app fixed v-model="topBar">
-      <v-row class="justify-center">
+      <v-row class="justify-center margin">
         <v-col class="btnCol">
             <RouterLink class="unlink" to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
@@ -169,6 +169,10 @@ const topBar = ref(true)
 
 
 <style scoped>
+
+.margin {
+  margin-left: 16px;
+}
 
 body {
   overflow: hidden; /* Body-Scrolling deaktivieren */

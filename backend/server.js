@@ -149,6 +149,17 @@ app.get('/api/items', (req, res) => {
     })
 })
 
+app.get('/api/character/arthania', (req, res) => {
+    const query = 'SELECT * FROM character WHERE ID = 1'
+
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({ error: 'Loading arthania failed' })
+        }
+        res.json({ character: rows })
+    })
+})
 
 /* 
 app.post('/api/updateStamina', (req, res) => {

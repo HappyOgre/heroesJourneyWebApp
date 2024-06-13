@@ -12,6 +12,7 @@ declare module 'vue' {
     Formen: typeof import('./src/components/arthania/formen.vue')['default']
     Inventar: typeof import('./src/components/arthania/inventar.vue')['default']
     Klasse: typeof import('./src/components/arthania/klasse.vue')['default']
+    Klassen: typeof import('./src/components/arthania/klassen.vue')['default']
     Moveset: typeof import('./src/components/arthania/moveset.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

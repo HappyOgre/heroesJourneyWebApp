@@ -1,8 +1,11 @@
 {
-  "name": "heroesJourney",
+  "name": "heroesjourney",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "concurrently --handle-input --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "node ./backend/server.js",
+    "client": "npm run dev --prefix frontend",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -25,6 +28,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
