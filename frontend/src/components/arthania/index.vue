@@ -103,7 +103,7 @@
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
-              <v-list-item-title>Reichweide</v-list-item-title>
+              <v-list-item-title>Reichweite</v-list-item-title>
               <p>{{ moveRange }}</p>
             </v-list-item-content>
           </v-list-item>
