@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import axios from 'axios';
+import bonuses from './klasse.vue';
 
 export const baseAt = ref(0);
 export const armorAt = ref(0);
@@ -10,6 +11,13 @@ export const level = ref(0);
 export const talentPoints = ref(0);
 export const attributePoints = ref(0);
 export const baseArk = ref(0);
+export const actions = ref(0);
+export const buffs = ref(0);
+export const bonusAction = ref(0);
+export const moveRange = ref(0);
+const className = ref('');
+const attBonus = ref([]);
+const talentBonus = ref([]);
 
 
 export const atPoints = [
@@ -45,6 +53,11 @@ async function loadData() {
         console.log('API Response:', response.data); // Überprüfen der API-Antwort
 
         const data = response.data.stats[0];
+
+        actions.value = data.aktionen; // actionen
+        buffs.value = data.buffs; // buffs
+        bonusAction.value = data.bonusaktion; // bonusactions
+        moveRange.value = data.reichweite; // move range
         atPoints[0].points.value = data.stamina; // stamina
         atPoints[1].points.value = data.agility; // agility
         atPoints[2].points.value = data.wisdom; // wisdom
@@ -80,6 +93,16 @@ async function loadData() {
         talents[21].points.value = data.gwk; // gwk
         talents[22].points.value = data.sch; // sch
         talents[23].points.value = data.fln; // fln
+
+        const charResponse = await axios.get('http://localhost:3001/api/character/arthania');
+        console.log('API Response:', charResponse.data);
+
+        const charData = charResponse.data.character[0];
+
+        attBonus.value = charData.attBonus.split('\r\n');
+        talentBonus.value = charData.talentBonus.split('\r\n');
+
+
     } catch (err) {
         console.error('Fehler beim Laden der Stats:', err.message);
     }
@@ -261,6 +284,7 @@ export const talentNames = [
     "sam", "gwk", "sch", "fln"
 ];
 export const talents = talentNames.map(talent => ({ talent, points: ref(0) }));
+
 
 export const staminaTalentCalc = computed(() => Math.floor(stamina.value / 2 + armorAt.value));
 export const agilityTalentCalc = computed(() => Math.floor(agility.value / 2 + armorAt.value));

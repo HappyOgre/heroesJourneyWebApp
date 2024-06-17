@@ -5,7 +5,7 @@
                 <v-row justify="center">
                     <v-card id="attributeUndTalenteTile">
                         <v-card-title>
-                            Attribute und Talente
+                            Attribute
                         </v-card-title>
                     </v-card>
                 </v-row>

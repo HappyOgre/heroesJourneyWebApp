@@ -14,97 +14,97 @@
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Level</v-list-item-title>
-              <v-list-item-text>{{ level }}</v-list-item-text>
+              <p>{{ level }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis" >
             <v-list-item-content>
               <v-list-item-title>LE</v-list-item-title>
-              <v-list-item-text>{{ le }}</v-list-item-text>
+              <p>{{ le }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>DEF</v-list-item-title>
-              <v-list-item-text>{{ def }}</v-list-item-text>
+              <p>{{ def }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Können</v-list-item-title>
-              <v-list-item-text>{{ koennen }}</v-list-item-text>
+              <p>{{ koennen }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>AT</v-list-item-title>
-              <v-list-item-text>{{ at }}</v-list-item-text>
+              <p>{{ at }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>FK</v-list-item-title>
-              <v-list-item-text>{{ fk }}</v-list-item-text>
+              <p>{{ fk }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>ZA</v-list-item-title>
-              <v-list-item-text>{{ za }}</v-list-item-text>
+              <p>{{ za }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>GW</v-list-item-title>
-              <v-list-item-text>{{ gw }}</v-list-item-text>
+              <p>{{ gw }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>EM</v-list-item-title>
-              <v-list-item-text>{{ em }}</v-list-item-text>
+              <p>{{ em }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>BS</v-list-item-title>
-              <v-list-item-text>{{ bs }}</v-list-item-text>
+              <p>{{ bs }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Krit</v-list-item-title>
-              <v-list-item-text>{{ crit }}</v-list-item-text>
+              <p>{{ crit }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>H</v-list-item-title>
-              <v-list-item-text>{{ haste }}</v-list-item-text>
+              <p>{{ haste }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Aktionen</v-list-item-title>
-              <v-list-item-text>{{ action }}</v-list-item-text>
+              <p>{{ actions }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Buffs</v-list-item-title>
-              <v-list-item-text>{{ buff }}</v-list-item-text>
+              <p>{{ buffs }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Bonusakt</v-list-item-title>
-              <v-list-item-text>{{ bonus }}</v-list-item-text>
+              <p>{{ bonusAction }}</p>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="no-ellipsis">
             <v-list-item-content>
               <v-list-item-title>Reichweide</v-list-item-title>
-              <v-list-item-text>{{ range }}</v-list-item-text>
+              <p>{{ moveRange }}</p>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -160,7 +160,7 @@
 <script setup>
 
 import { ref } from 'vue'
-import { level, le, def, koennen, at, fk, za, gw, em, bs, crit, haste } from './calcs'
+import { level, le, def, koennen, at, fk, za, gw, em, bs, crit, haste, actions, buffs, bonusAction, moveRange } from './calcs'
 
 const mainSidebarDrawer = ref(true)
 const topBar = ref(true)
