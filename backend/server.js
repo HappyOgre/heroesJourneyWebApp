@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const port = 3001; // Ändern Sie den Port, um Konflikte mit Vite zu vermeiden
+const port = 3001;
 
 export const db = new sqlite3.Database(join(__dirname, 'test.db'), sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
