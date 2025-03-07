@@ -3,12 +3,13 @@ import sqlite3 from 'sqlite3';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import cors from 'cors';
+import jwt from 'jsonwebtoken';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const port = 3001; // Ändern Sie den Port, um Konflikte mit Vite zu vermeiden
+const port = 3001;
 
 export const db = new sqlite3.Database(join(__dirname, 'test.db'), sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
@@ -16,6 +17,62 @@ export const db = new sqlite3.Database(join(__dirname, 'test.db'), sqlite3.OPEN_
     } else {
         console.log('Verbunden mit der Datenbank.');
     }
+});
+
+const SECRET_KEY = 'diesIstEinTestSchlüsselTextLol'
+
+const users = [
+    { id: 1, username: 'admin', password: 'password123' },
+];
+
+app.post('/api/login', (req, res) =>{
+    const { username, password } = req.body;
+
+    const query = 'SELECT * FROM admins WHERE username = ?';
+    db.get(query, [username], (err, row) => {
+        if (err) {
+            console.error('Fehler beim Abrufen des Benutzers:', err.message);
+            return res.status(500).json({ error: 'Datenbankfehler' });
+        }
+
+        if (!row || row.password !== password) {
+            return res.status(401).json({ error: 'Ungültige Anmeldedaten' });
+        }
+
+        const token = jwt.sign({ id: row.id, username: row.username }, SECRET_KEY, {
+            expiresIn: '1h',
+        });
+
+        res.json({ message: 'Login erfolgreich', token });
+    });
+});
+
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ error: 'Token fehlt' });
+    }
+
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+        if (err) {
+            return res.status(403).json({ error: 'Ungültiges Token' });
+        }
+
+        req.user = user;
+        next();
+    });
+};
+
+app.get('/api/admin', authenticateToken, (req, res) => {
+    res.json({ message: 'Willkommen im Admin-Dashboard!', user: req.user });
+});
+
+fetch('http://localhost:3001/api/admin', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer ${token}' },
+    body: JSON.stringify({ username: 'admin', password: 'secret'})
 });
 
 app.use(cors());
@@ -159,6 +216,10 @@ app.get('/api/character/arthania', (req, res) => {
         }
         res.json({ character: rows })
     })
+})
+
+app.get('/api/formen', (req, res) => {
+    const query = 'SELECT * FROM '
 })
 
 /* 

@@ -1,6 +1,10 @@
 import { ref, computed } from 'vue'
 import axios from 'axios';
 import bonuses from './klasse.vue';
+import { helmet, shoulder, chest, hands, legs,
+         neck, ring1, ring2, trinket1, trinket2,
+         mainHand, offHand
+ } from './ausruestung.vue'
 
 export const baseAt = ref(0);
 export const armorAt = ref(0);
@@ -18,33 +22,21 @@ export const moveRange = ref(0);
 const className = ref('');
 const attBonus = ref([]);
 const talentBonus = ref([]);
+const items = ref([]);
+export const bonusLE = ref(0);
+export const bonusDEF = ref(0);
+export const bonusKoennen = ref(0);
+export const bonusCrit = ref(0);
+export const bonusHaste = ref(0);
 
 
 export const atPoints = [
-    {
-        name: "staminaPoints",
-        points: ref(0)
-    },
-    {
-        name: "agilityPoints",
-        points: ref(0)
-    },
-    {
-        name: "wisdomPoints",
-        points: ref(0)
-    },
-    {
-        name: "strengthPoints",
-        points: ref(0)
-    },
-    {
-        name: "intelligencePoints",
-        points: ref(0)
-    },
-    {
-        name: "spiritPoints",
-        points: ref(0)
-    }
+    {name: "staminaPoints", points: ref(0)},
+    {name: "agilityPoints", points: ref(0)},
+    {name: "wisdomPoints", points: ref(0)},
+    {name: "strengthPoints", points: ref(0)},
+    {name: "intelligencePoints", points: ref(0)},
+    {name: "spiritPoints", points: ref(0)}
 ]
 
 async function loadData() {
@@ -102,6 +94,10 @@ async function loadData() {
         attBonus.value = charData.attBonus.split('\r\n');
         talentBonus.value = charData.talentBonus.split('\r\n');
 
+        const itemResponse = await axios.get('http://localhost:3001/api/items');
+        items.value = itemResponse.data.items;
+
+        processItemBonuses();
 
     } catch (err) {
         console.error('Fehler beim Laden der Stats:', err.message);
@@ -109,6 +105,146 @@ async function loadData() {
 }
 
 loadData();
+
+function processItemBonuses() {
+    items.value.forEach(item => {
+        applyItemBonus(item.bonus1, item.value1);
+        applyItemBonus(item.bonus2, item.value2);
+        applyItemHasteAndCrit(item);
+    });
+}
+
+function applyItemBonus(bonus, value) {
+    switch (bonus) {
+        case 'AUS':
+            atPoints[0].points.value += value;
+            break;
+        case 'BW':
+            atPoints[1].points.value += value;
+            break;
+        case 'WE':
+            atPoints[2].points.value += value;
+            break;
+        case 'ST':
+            atPoints[3].points.value += value;
+            break;
+        case 'IN':
+            atPoints[4].points.value += value;
+            break;
+        case 'GEI':
+            atPoints[5].points.value += value;
+            break;
+        case 'ARK':
+            talents[0].points.value += value;
+            break;
+        case 'UNS':
+            talents[1].points.value += value;
+            break;
+        case 'WIS':
+            talents[2].points.value += value;
+            break;
+        case 'UEZG':
+            talents[3].points.value += value;
+            break;
+        case 'MGW':
+            talents[4].points.value += value;
+            break;
+        case 'ESC':
+            talents[5].points.value += value;
+            break;
+        case 'MNK':
+            talents[6].points.value += value;
+            break;
+        case 'WHN':
+            talents[7].points.value += value;
+            break;
+        case 'AKR':
+            talents[8].points.value += value;
+            break;
+        case 'SCL':
+            talents[9].points.value += value;
+            break;
+        case 'FFK':
+            talents[10].points.value += value;
+            break;
+        case 'TAUE':
+            talents[11].points.value += value;
+            break;
+        case 'FWK':
+            talents[12].points.value += value;
+            break;
+        case 'ATL':
+            talents[13].points.value += value;
+            break;
+        case 'WNL':
+            talents[14].points.value += value;
+            break;
+        case 'ALC':
+            talents[15].points.value += value;
+            break;
+        case 'UELK':
+            talents[16].points.value += value;
+            break;
+        case 'HKA':
+            talents[17].points.value += value;
+            break;
+        case 'RLG':
+            talents[18].points.value += value;
+            break;
+        case 'THB':
+            talents[19].points.value += value;
+            break;
+        case 'SAM':
+            talents[20].points.value += value;
+            break;
+        case 'GWK':
+            talents[21].points.value += value;
+            break;
+        case 'SCH':
+            talents[22].points.value += value;
+            break;
+        case 'FLN':
+            talents[23].points.value += value;
+            break;
+        case 'LE':
+            bonusLE.value += value;
+            break;
+        case 'DEF':
+            bonusDEF.value += value;
+            break;
+        case 'Koennen':
+            bonusKoennen.value += value;
+            break;
+        case 'AT':
+            abilities[0].points.value += value;
+            break;
+        case 'GW':
+            abilities[1].points.value += value;
+            break;
+        case 'FK':
+            abilities[2].points.value += value;
+            break;
+        case 'EM':
+            abilities[3].points.value += value;
+            break;
+        case 'ZA':
+            abilities[4].points.value += value;
+            break;
+        case 'BS':
+            abilities[5].points.value += value;
+            break;
+
+    }
+}
+
+function applyItemHasteAndCrit(item) {
+    if (item.haste && item.haste !== 0 && item.haste !== "") {
+        bonusHaste.value += item.haste;
+    }
+    if (item.crit && item.crit !== 0 && item.crit !== "") {
+        bonusCrit.value += item.crit
+    }
+}
 
 export const calc = computed(() => Math.floor(baseAt.value + armorAt.value));
 export const calcKoennen = computed(() => Math.floor(baseAt.value + armorAt.value + koennen.value));
@@ -162,100 +298,12 @@ export async function levelUpSpirit() {
     await levelUpAttribute('spirit');
 }
 
-/*
-export const ats = [
-    "staminaPoints", "agilityPoints", "wisdomPoints",
-    "strengthPoints", "intelligencePoints", "spiritPoints"
-];
-export const atPoints = ats.map(point => ({ point, points: ref(0) }));
-*/
-
-
-/*
-export async function levelUpStamina() {
-    atPoints[0].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateStamina', { newStamina: atPoints[0].points.value, newTalentPoints: talentPoints.value });
-        console.log('Stamina und TP aktuallisiert: ', atPoints[0].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Stamina aktuallisieren')
-    }
-}
-
-
-export async function levelUpAgility() {
-    atPoints[1].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateAgility', { newAgility: atPoints[1].points.value, newTalentPoints: talentPoints.value });
-        console.log('Agility und TP aktuallisiert: ', atPoints[1].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Agility aktuallisieren')
-    }
-}
-
-export async function levelUpWisdom() {
-    atPoints[2].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateWisdom', { newWisdom: atPoints[2].points.value, newTalentPoints: talentPoints.value });
-        console.log('Wisdom und TP aktuallisiert: ', atPoints[2].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Wisdom aktuallisieren')
-    }
-}
-
-export async function levelUpStrength() {
-    atPoints[3].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateStrength', { newStrength: atPoints[3].points.value, newTalentPoints: talentPoints.value });
-        console.log('Strength und TP aktuallisiert: ', atPoints[3].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Strength aktuallisieren')
-    }
-}
-
-export async function levelUpIntelligence() {
-    atPoints[4].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateIntelligence', { newIntelligence: atPoints[4].points.value, newTalentPoints: talentPoints.value });
-        console.log('Intelligence und TP aktuallisiert: ', atPoints[4].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Intelligence aktuallisieren')
-    }
-}
-
-export async function levelUpSpirit() {
-    atPoints[5].points.value += 1;
-    talentPoints.value -= 1;
-    try {
-        await axios.post('http://localhost:3001/api/updateSpirit', { newSpirit: atPoints[5].points.value, newTalentPoints: talentPoints.value });
-        console.log('Spirit und TP aktuallisiert: ', atPoints[5].points.value, talentPoints.value);
-    } catch (error) {
-        console.error('Fehler beim Spirit aktuallisieren')
-    }
-}
-
-*/
-
 export const stamina = computed(() => Math.floor(calc.value + atPoints[0].points.value));
 export const agility = computed(() => Math.floor(calc.value + atPoints[1].points.value));
 export const wisdom = computed(() => Math.floor(calc.value + atPoints[2].points.value));
 export const strength = computed(() => Math.floor(calc.value + atPoints[3].points.value));
 export const intelligence = computed(() => Math.floor(calc.value + atPoints[4].points.value));
 export const spirit = computed(() => Math.floor(calc.value + atPoints[5].points.value));
-
-/*
-export const staminaRettungsrollUncapped = Math.floor(stamina/2);
-export const agilityRettungsrollUncapped = Math.floor(agility/2);
-export const wisdomRettungsrollUncapped = Math.floor(wisdom/2);
-export const strengthRettungsrollUncapped = Math.floor(strength/2);
-export const intelligenceRettungsrollUncapped = Math.floor(intelligence/2);
-export const spiritRettungsrollUncapped = Math.floor(spirit/2);
-*/
 
 export const rettungsrollsUncapped = computed(() => [
     Math.floor(stamina.value / 2),
@@ -292,33 +340,6 @@ export const wisdomTalentCalc = computed(() => Math.floor(wisdom.value / 2 + arm
 export const strengthTalentCalc = computed(() => Math.floor(strength.value / 2 + armorAt.value));
 export const intelligenceTalentCalc = computed(() => Math.floor(intelligence.value / 2 + armorAt.value));
 export const spiritTalentCalc = computed(() => Math.floor(spirit.value / 2 + armorAt.value));
-
-/*
-talents[0].points.value += 0; //ARK
-talents[1].points.value += 0; //UNS
-talents[2].points.value += 0; //WIS
-talents[3].points.value += 0; //UeZG
-talents[4].points.value += 0; //MgW
-talents[5].points.value += 0; //ESC
-talents[6].points.value += 0; //MNK
-talents[7].points.value += 0; //WHN
-talents[8].points.value += 0; //AKR
-talents[9].points.value += 0; //SCL
-talents[10].points.value += 0; //FFK
-talents[11].points.value += 0; //TAeU
-talents[12].points.value += 0; //FWK
-talents[13].points.value += 0; //ATL
-talents[14].points.value += 0; //WNL
-talents[15].points.value += 0; //ALC
-talents[16].points.value += 0; //UeLK
-talents[17].points.value += 0; //HKA
-talents[18].points.value += 0; //RLG
-talents[19].points.value += 0; //THB
-talents[20].points.value += 0; //SAM
-talents[21].points.value += 0; //GWK
-talents[22].points.value += 0; //SCH
-talents[23].points.value += 0; //FLN
-*/
 
 const talentMap = talentNames.reduce((map, talent, index) => {
     map[talent] = index;
@@ -469,9 +490,9 @@ export const em = computed(() => Math.floor(intelligenceAbilityCalc.value + abil
 export const za = computed(() => Math.floor(intelligenceAbilityCalc.value + abilities[4].points.value));
 export const bs = computed(() => Math.floor(spiritAbilityCalc.value + abilities[5].points.value));
 
-export const haste = computed(() => Math.floor(agility.value + level.value / 6 - 1 + armorAt.value));
-export const crit = computed(() => Math.floor(level.value / 8 + armorAt.value + 1));
-export const le = computed(() => Math.floor(level.value * 5 + stamina.value * 5 + armorAt.value));
+export const haste = computed(() => Math.floor(agility.value + level.value / 6 - 1 + armorAt.value + bonusHaste.value));
+export const crit = computed(() => Math.floor(level.value / 8 + armorAt.value + 1 + bonusCrit.value));
+export const le = computed(() => Math.floor(level.value * 5 + stamina.value * 5 + armorAt.value + bonusLE.value));
 
 export const defBase = computed((): number => Math.max(strength.value, agility.value));
 function defensiveCalculated(defBase: number) {

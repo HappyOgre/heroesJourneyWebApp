@@ -115,13 +115,13 @@
     <v-app-bar app fixed v-model="topBar">
       <v-row class="justify-center margin">
         <v-col class="btnCol">
-            <RouterLink class="unlink" to="/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
+            <RouterLink class="unlink" to="/arthania/stats"><v-btn variant="tonal" class="mx-1">Stats</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/ausruestung"><v-btn variant="tonal" class="mx-1">Ausrüstung</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/arthania/ausruestung"><v-btn variant="tonal" class="mx-1">Ausrüstung</v-btn></RouterLink>
         </v-col>  
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/arthania/formen"><v-btn variant="tonal" class="mx-1">Formen</v-btn></RouterLink>
         </v-col>  
 <!-- TODO - Seite bauen
         <v-col class="btnCol">
@@ -129,7 +129,7 @@
         </v-col>  
 -->
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/moveset"><v-btn variant="tonal" class="mx-1">Moveset</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/arthania/moveset"><v-btn variant="tonal" class="mx-1">Moveset</v-btn></RouterLink>
         </v-col>  
 <!-- TODO - Seiten bauen
         <v-col class="btnCol">
@@ -138,16 +138,26 @@
         <v-col class="btnCol">
           <v-btn variant="tonal" class="mx-1">Notes</v-btn>
         </v-col>  
-      -->
         <v-col class="btnCol">
           <RouterLink class="unlink" to="/inventar"><v-btn variant="tonal" class="mx-1">Inventar</v-btn></RouterLink>
         </v-col>
+        -->
         <v-col class="btnCol">
-          <RouterLink class="unlink" to="/char"><v-btn variant="tonal" class="mx-1">Charakter</v-btn></RouterLink>
+          <RouterLink class="unlink" to="/arthania/char"><v-btn variant="tonal" class="mx-1">Charakter</v-btn></RouterLink>
+        </v-col> 
+        <v-col class="btnCol">
+          <vbutton>ADMIN</vbutton>
         </v-col> 
       </v-row>
       <v-spacer></v-spacer>
+      <v-col>
         <v-img src="./Hejo_logo.png"></v-img>
+      </v-col>
+      <v-row class="justify-center margin">
+        <v-col class="btnCol">
+           <RouterLink class="unlink" to="/login"><v-btn variant="tonal" class="mx-1">Login</v-btn></RouterLink>
+        </v-col>
+      </v-row>
     </v-app-bar>
 
 
@@ -160,7 +170,7 @@
 <script setup>
 
 import { ref } from 'vue'
-import { level, le, def, koennen, at, fk, za, gw, em, bs, crit, haste, actions, buffs, bonusAction, moveRange } from './calcs'
+import { level, le, def, koennen, at, fk, za, gw, em, bs, crit, haste, actions, buffs, bonusAction, moveRange } from './src/components/arthania/calcs'
 
 const mainSidebarDrawer = ref(true)
 const topBar = ref(true)

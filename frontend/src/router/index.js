@@ -8,41 +8,46 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Index from '../../src/components/arthania/index.vue'
-import Stats from '../../src/components/arthania/stats.vue'
-import Ausruestung from '../components/arthania/ausruestung.vue'
-import Formen from '../../src/components/arthania/formen.vue'
-import Moveset from '../../src/components/arthania/moveset.vue'
-import Klasse from '../../src/components/arthania/klasse.vue'
-import Inventar from '../../src/components/arthania/inventar.vue'
+import Index from '../../index.vue'
+import Login from '../login.vue'
+import arthaniaStats from '../../src/components/arthania/stats.vue'
+import arthaniaAusruestung from '../components/arthania/ausruestung.vue'
+import arthaniaFormen from '../../src/components/arthania/formen.vue'
+import arthaniaMoveset from '../../src/components/arthania/moveset.vue'
+import arthaniaKlasse from '../../src/components/arthania/klasse.vue'
+import arthaniaInventar from '../../src/components/arthania/inventar.vue'
 
 const routes = [
   {path: '/', 
   component: Index,
     children: [
       {
-        path: 'stats',
-        component: Stats
+        path: '/arthania/stats',
+        component: arthaniaStats
       },
       {
-        path: 'ausruestung',
-        component: Ausruestung
+        path: '/arthania/ausruestung',
+        component: arthaniaAusruestung
       },
       {
-        path: 'formen',
-        component: Formen
+        path: '/arthania/formen',
+        component: arthaniaFormen
       },
       {
-        path: 'moveset',
-        component: Moveset
+        path: '/arthania/moveset',
+        component: arthaniaMoveset
       },
       {
-        path: 'char',
-        component: Klasse
+        path: '/arthania/char',
+        component: arthaniaKlasse
       },
       {
-        path: 'inventar',
-        component: Inventar
+        path: '/arthania/inventar',
+        component: arthaniaInventar
+      },
+      {
+        path: '/login',
+        component: Login
       }
     ]
   }
